@@ -6,7 +6,7 @@ import Router from '@koa/router';
 
 import { config } from './config';
 
-import {createConnections, getConnectionManager} from "typeorm";
+import { createConnections } from 'typeorm';
 
 const app = next({ dev: config.isDev });
 
@@ -14,22 +14,18 @@ const handle = app.getRequestHandler();
 
 app.prepare().then(async () => {
   const server = new Koa();
-  
+
   const router = new Router();
 
-  await createConnections()
+  await createConnections();
 
-  const defaultConnection = getConnectionManager().get("actor_c1");
-  
-  console.log('connect', defaultConnection);
-
-  router.all('(.*)', async (ctx: Context) => {
-    await handle(ctx.req, ctx.res);
-    ctx.respond = false;
-  });
+  // router.all('(.*)', async (ctx: Context) => {
+  //   await handle(ctx.req, ctx.res);
+  //   ctx.respond = false;
+  // });
 
   server.use(async (ctx: Context, next: Next) => {
-    ctx.res.statusCode = 200;
+    await handle(ctx.req, ctx.res);
     await next();
   });
 

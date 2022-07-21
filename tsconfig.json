@@ -3,6 +3,7 @@
     "allowJs": true,
     //"checkJs": true,
     "alwaysStrict": true,
+    "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": false,
     "isolatedModules": true,

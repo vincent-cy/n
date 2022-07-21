@@ -7,7 +7,9 @@
     "username": "root",
     "password": "EhM7xWXekSMHcmcT",
     "synchronize": false,
-    "entities": ["server/model/actor_c/entities/*.js"]
+    "entities": [
+      "server/model/actor_c/entities/*.js"
+    ]
   },
   {
     "name": "account",
@@ -17,6 +19,8 @@
     "username": "root",
     "password": "EhM7xWXekSMHcmcT",
     "synchronize": false,
-    "entities": ["server/model/mmo_account/entities/*.js"]
+    "entities": [
+      "server/model/mmo_account/entities/*.js"
+    ]
   }
 ]

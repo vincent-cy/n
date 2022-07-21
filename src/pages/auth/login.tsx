@@ -1,19 +1,22 @@
 import { Button } from '@paljs/ui/Button';
 import { InputGroup } from '@paljs/ui/Input';
 import { Checkbox } from '@paljs/ui/Checkbox';
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 import Auth, { Group } from 'components/Auth';
 import Layout from 'Layouts';
 
 export default function Login() {
+  const [check, setChecked] = useState<boolean>(false);
+
   const onCheckbox = () => {
     // v will be true or false
+    setChecked(!check);
   };
   const handleLogin = () => {
-    console.log('登录')
-  }
+    console.log('登录');
+  };
   return (
     <Layout title="登录">
       <Auth title="登录" subTitle="你好! 输入账号进行登录">
@@ -25,9 +28,7 @@ export default function Login() {
             <input type="password" placeholder="密码" />
           </InputGroup>
           <Group>
-            <Checkbox checked onChange={onCheckbox}>
-              记住
-            </Checkbox>
+            <Checkbox style={{ margin: 0 }} checked={check} onChange={onCheckbox} children={'记住'} />
             <Link href="/auth/request-password">
               <a>忘记密码?</a>
             </Link>

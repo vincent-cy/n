@@ -7,7 +7,10 @@ const AuthStyle = styled.div<{ subTitle?: string }>`
   margin: auto;
   display: block;
   width: 100%;
+  background-color: rgba(255, 255, 255, 0.75);
   max-width: 35rem;
+  padding: 2rem 2rem;
+  border-radius: 0.2rem;
   a {
     font-weight: 600;
   }
@@ -37,6 +40,10 @@ export const Group = styled.div`
 const CardAuth = styled(Card)`
   margin-bottom: 0;
   height: calc(100vh - 5rem);
+  /* background-image: url("/image/1.jpg");
+  background-position:center center;
+  background-repeat:no-repeat;
+	background-attachment:fixed; */
   ${breakpointDown('sm')`
     height: 100vh;
   `}
