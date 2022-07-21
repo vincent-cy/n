@@ -4,10 +4,8 @@
     "type": "mysql",
     "host": "localhost",
     "port": 44406,
-    "charset": "utf-8",
     "username": "root",
     "password": "EhM7xWXekSMHcmcT",
-    "database": "actor_c1001",
     "synchronize": false,
     "entities": ["server/model/actor_c/entities/*.js"]
   },
@@ -17,22 +15,8 @@
     "host": "localhost",
     "port": 44406,
     "username": "root",
-    "charset": "utf-8",
     "password": "EhM7xWXekSMHcmcT",
-    "database": "mmo_account",
     "synchronize": false,
     "entities": ["server/model/mmo_account/entities/*.js"]
-  },
-  {
-    "name": "user",
-    "type": "mysql",
-    "host": "localhost",
-    "port": 44406,
-    "charset": "utf-8",
-    "username": "root",
-    "password": "EhM7xWXekSMHcmcT",
-    "database": "user",
-    "synchronize": true,
-    "entities": ["server/model/user/entities/*.js"]
   }
 ]

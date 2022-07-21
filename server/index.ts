@@ -6,13 +6,22 @@ import Router from '@koa/router';
 
 import { config } from './config';
 
+import {createConnections, getConnectionManager} from "typeorm";
+
 const app = next({ dev: config.isDev });
 
 const handle = app.getRequestHandler();
 
-app.prepare().then(() => {
+app.prepare().then(async () => {
   const server = new Koa();
+  
   const router = new Router();
+
+  await createConnections()
+
+  const defaultConnection = getConnectionManager().get("actor_c1");
+  
+  console.log('connect', defaultConnection);
 
   router.all('(.*)', async (ctx: Context) => {
     await handle(ctx.req, ctx.res);
