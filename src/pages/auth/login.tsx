@@ -11,6 +11,9 @@ export default function Login() {
   const onCheckbox = () => {
     // v will be true or false
   };
+  const handleLogin = () => {
+    console.log('登录')
+  }
   return (
     <Layout title="登录">
       <Auth title="登录" subTitle="你好! 输入账号进行登录">
@@ -29,7 +32,7 @@ export default function Login() {
               <a>忘记密码?</a>
             </Link>
           </Group>
-          <Button status="Success" type="button" shape="SemiRound" fullWidth>
+          <Button status="Success" onClick={handleLogin} type="button" shape="SemiRound" fullWidth>
             登录
           </Button>
         </form>

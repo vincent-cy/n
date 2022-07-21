@@ -7,6 +7,9 @@ import Layout from 'Layouts';
 import Auth, { Group } from 'components/Auth';
 
 export default function ResetPassword() {
+  const handleSubmit= () => {
+    
+  }
   return (
     <Layout title="更改密码">
       <Auth title="更改密码" subTitle="请输入新密码">
@@ -17,7 +20,7 @@ export default function ResetPassword() {
           <InputGroup fullWidth>
             <input type="password" placeholder="确认新密码" />
           </InputGroup>
-          <Button status="Success" type="button" shape="SemiRound" fullWidth>
+          <Button status="Success" onClick={handleSubmit} type="button" shape="SemiRound" fullWidth>
             提交
           </Button>
         </form>
