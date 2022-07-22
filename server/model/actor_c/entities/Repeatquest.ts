@@ -1,30 +1,45 @@
-import { Column, Entity, Index } from "typeorm";
-
-@Index("AK_Key_1", ["actorid"], {})
-@Entity("repeatquest", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * repeatquest
+ * @Date 2022/7/22 15:18:38
+ * @author vincent
+ * @export
+ * @class Repeatquest
+ */
+@Entity({
+    name: 'repeatquest'
+})
 export class Repeatquest {
-  @Column("int", {
-    name: "actorid",
-    nullable: true,
-    comment: "角色id",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  actorid: number | null;
-
-  @Column("int", {
-    name: "idtime",
-    nullable: true,
-    comment: "低16任务id，高16完成次数",
-    default: () => "'0'",
-  })
-  idtime: number | null;
-
-  @Column("int", {
-    name: "qtime",
-    nullable: true,
-    comment: "任务计次归零的时间",
-    default: () => "'0'",
-  })
-  qtime: number | null;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Repeatquest
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 角色id
+     *
+     * @type { number }
+     * @memberof Repeatquest
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * 低16任务id，高16完成次数
+     *
+     * @type { number }
+     * @memberof Repeatquest
+     */
+    @Column({ name: 'idtime' })
+    idtime: number;
+    /**
+     * 任务计次归零的时间
+     *
+     * @type { number }
+     * @memberof Repeatquest
+     */
+    @Column({ name: 'qtime' })
+    qtime: number;
 }

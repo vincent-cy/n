@@ -1,5 +1,5 @@
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import {formatDate} from '../../../../utils/date'
+import {formatDate} from '../../../utils/date'
 
 @Entity("user")
 export class User {

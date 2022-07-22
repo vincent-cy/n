@@ -1,23 +1,61 @@
-import { Column, Entity } from "typeorm";
-
-@Entity("offlineachieve", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * offlineachieve
+ * @Date 2022/7/22 15:18:38
+ * @author vincent
+ * @export
+ * @class Offlineachieve
+ */
+@Entity({
+    name: 'offlineachieve'
+})
 export class Offlineachieve {
-  @Column("int", { name: "actorid", comment: "玩家id", default: () => "'0'" })
-  actorid: number;
-
-  @Column("int", { name: "type", comment: "成就主类型" })
-  type: number;
-
-  @Column("int", {
-    name: "subtype",
-    comment: "成就父类型",
-    default: () => "'0'",
-  })
-  subtype: number;
-
-  @Column("int", { name: "value", comment: "进度", default: () => "'0'" })
-  value: number;
-
-  @Column("int", { name: "way", comment: "方式", default: () => "'0'" })
-  way: number;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Offlineachieve
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 玩家id
+     *
+     * @type { number }
+     * @memberof Offlineachieve
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * 成就主类型
+     *
+     * @type { number }
+     * @memberof Offlineachieve
+     */
+    @Column({ name: 'type' })
+    type: number;
+    /**
+     * 成就父类型
+     *
+     * @type { number }
+     * @memberof Offlineachieve
+     */
+    @Column({ name: 'subtype' })
+    subtype: number;
+    /**
+     * 进度
+     *
+     * @type { number }
+     * @memberof Offlineachieve
+     */
+    @Column({ name: 'value' })
+    value: number;
+    /**
+     * 方式
+     *
+     * @type { number }
+     * @memberof Offlineachieve
+     */
+    @Column({ name: 'way' })
+    way: number;
 }

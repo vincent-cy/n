@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useRef, useState } from 'react';
 import { Toastr, ToastrRef, ToastrProps } from '@paljs/ui/Toastr';
 import Row from '@paljs/ui/Row';

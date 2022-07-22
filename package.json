@@ -34,11 +34,11 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon",
-    "build": "next build",
-    "start": "next start --port ${PORT-3000}",
+    "build": "next build && tsc --project tsconfig.server.json",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
     "export": "yarn build && next export -o _static",
     "prepare": "husky install",
-    "db": "npx typeorm-model-generator -h localhost -d zgame_name -p 44406 -u root -x EhM7xWXekSMHcmcT -e mysql -o zgame_name"
+    "db": " typeorm-model-generator -h localhost -d zgame_name -p 44406 -u root -x EhM7xWXekSMHcmcT -e mysql -o zgame_name"
   },
   "repository": {
     "type": "git",
@@ -48,6 +48,7 @@
     "url": "https://github.com/paljs/nextjs-admin-template/issues"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.9",
     "@babel/plugin-proposal-decorators": "^7.18.9",
     "@types/koa": "^2.13.5",
     "@types/koa__router": "^8.0.11",

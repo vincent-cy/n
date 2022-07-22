@@ -1,25 +1,45 @@
-import { Column, Entity, Index } from "typeorm";
-
-@Index("guild_acrot_index", ["guildid", "actorid"], {})
-@Index("guildapply_index", ["guildid"], {})
-@Entity("guildapplylist", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * guildapplylist
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Guildapplylist
+ */
+@Entity({
+    name: 'guildapplylist'
+})
 export class Guildapplylist {
-  @Column("bigint", {
-    primary: true,
-    name: "guildid",
-    comment: "行会id",
-    default: () => "'0'",
-  })
-  guildid: string;
-
-  @Column("int", {
-    primary: true,
-    name: "actorid",
-    comment: "玩家id",
-    default: () => "'0'",
-  })
-  actorid: number;
-
-  @Column("int", { name: "applytime", comment: "申请的时间" })
-  applytime: number;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Guildapplylist
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 行会id
+     *
+     * @type { string }
+     * @memberof Guildapplylist
+     */
+    @Column({ name: 'guildid' })
+    guildid: string;
+    /**
+     * 玩家id
+     *
+     * @type { number }
+     * @memberof Guildapplylist
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * 申请的时间
+     *
+     * @type { number }
+     * @memberof Guildapplylist
+     */
+    @Column({ name: 'applytime' })
+    applytime: number;
 }

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Card, CardBody } from '@paljs/ui/Card';
 import { breakpointUp } from '@paljs/ui/breakpoints';
 import Row from '@paljs/ui/Row';

@@ -1,19 +1,37 @@
-import { Column, Entity } from "typeorm";
-
-@Entity("guildapplyresult", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * guildapplyresult
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Guildapplyresult
+ */
+@Entity({
+    name: 'guildapplyresult'
+})
 export class Guildapplyresult {
-  @Column("int", {
-    primary: true,
-    name: "actorid",
-    comment: "玩家id",
-    default: () => "'0'",
-  })
-  actorid: number;
-
-  @Column("int", {
-    name: "applyresult",
-    comment: "申请结果",
-    default: () => "'0'",
-  })
-  applyresult: number;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Guildapplyresult
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 玩家id
+     *
+     * @type { number }
+     * @memberof Guildapplyresult
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * 申请结果
+     *
+     * @type { number }
+     * @memberof Guildapplyresult
+     */
+    @Column({ name: 'applyresult' })
+    applyresult: number;
 }

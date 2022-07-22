@@ -1,137 +1,150 @@
-import { Column, Entity, Index, PrimaryGeneratedColumn } from "typeorm";
-
-@Index("index_actorid", ["actorid"], {})
-@Entity("servermail", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * servermail
+ * @Date 2022/7/22 15:18:38
+ * @author vincent
+ * @export
+ * @class Servermail
+ */
+@Entity({
+    name: 'servermail'
+})
 export class Servermail {
-  @PrimaryGeneratedColumn({
-    type: "int",
-    name: "servermailid",
-    comment: "全服邮件id",
-  })
-  servermailid: number;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Servermail
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 全服邮件id
+     *
+     * @type { number }
+     * @memberof Servermail
+     */
+    @Column({ name: 'servermailid' })
+    servermailid: number;
+    /**
+     * 角色id
+     *
+     * @type { number }
+     * @memberof Servermail
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * 邮件标题
+     *
+     * @type { string }
+     * @memberof Servermail
+     */
+    @Column({ name: 'title' })
+    title: string;
+    /**
+     * 邮件内容
+     *
+     * @type { string }
+     * @memberof Servermail
+     */
+    @Column({ name: 'content' })
+    content: string;
+    /**
+     * 最低vip等级
+     *
+     * @type { number }
+     * @memberof Servermail
+     */
+    @Column({ name: 'minviplevel' })
+    minviplevel: number;
+    /**
+     * 最高vip等级
+     *
+     * @type { number }
+     * @memberof Servermail
+     */
+    @Column({ name: 'maxviplevel' })
+    maxviplevel: number;
+    /**
+     * 最低人物等级
+     *
+     * @type { number }
+     * @memberof Servermail
+     */
+    @Column({ name: 'minlevel' })
+    minlevel: number;
+    /**
+     * 最高人物等级
+     *
+     * @type { number }
+     * @memberof Servermail
+     */
+    @Column({ name: 'maxlevel' })
+    maxlevel: number;
+    /**
+     * 最早注册时间
+     *
+     * @type { number }
+     * @memberof Servermail
+     */
+    @Column({ name: 'minregistertime' })
+    minregistertime: number;
+    /**
+     * 最晚注册时间
+     *
+     * @type { number }
+     * @memberof Servermail
+     */
+    @Column({ name: 'maxregistertime' })
+    maxregistertime: number;
+    /**
+     * 最早登录时间
+     *
+     * @type { number }
+     * @memberof Servermail
+     */
+    @Column({ name: 'minlogintime' })
+    minlogintime: number;
+    /**
+     * 最晚登录时间
+     *
+     * @type { number }
+     * @memberof Servermail
+     */
+    @Column({ name: 'maxlogintime' })
+    maxlogintime: number;
+    /**
+     * 是否在线
+     *
+     * @type { number }
+     * @memberof Servermail
+     */
+    @Column({ name: 'online' })
+    online: number;
+    /**
+     * 性别
+     *
+     * @type { number }
+     * @memberof Servermail
+     */
+    @Column({ name: 'sex' })
+    sex: number;
+    /**
+     * 是否完成
+     *
+     * @type { number }
+     * @memberof Servermail
+     */
+    @Column({ name: 'complete' })
+    complete: number;
+    /**
+     * 邮件用途
 
-  @Column("int", {
-    name: "actorid",
-    nullable: true,
-    comment: "角色id",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  actorid: number | null;
-
-  @Column("varchar", {
-    name: "title",
-    nullable: true,
-    comment: "邮件标题",
-    length: 200,
-  })
-  title: string | null;
-
-  @Column("varchar", {
-    name: "content",
-    nullable: true,
-    comment: "邮件内容",
-    length: 600,
-  })
-  content: string | null;
-
-  @Column("int", {
-    name: "minviplevel",
-    nullable: true,
-    comment: "最低vip等级",
-    default: () => "'0'",
-  })
-  minviplevel: number | null;
-
-  @Column("int", {
-    name: "maxviplevel",
-    nullable: true,
-    comment: "最高vip等级",
-    default: () => "'0'",
-  })
-  maxviplevel: number | null;
-
-  @Column("int", {
-    name: "minlevel",
-    nullable: true,
-    comment: "最低人物等级",
-    default: () => "'0'",
-  })
-  minlevel: number | null;
-
-  @Column("int", {
-    name: "maxlevel",
-    nullable: true,
-    comment: "最高人物等级",
-    default: () => "'0'",
-  })
-  maxlevel: number | null;
-
-  @Column("int", {
-    name: "minregistertime",
-    nullable: true,
-    comment: "最早注册时间",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  minregistertime: number | null;
-
-  @Column("int", {
-    name: "maxregistertime",
-    nullable: true,
-    comment: "最晚注册时间",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  maxregistertime: number | null;
-
-  @Column("int", {
-    name: "minlogintime",
-    nullable: true,
-    comment: "最早登录时间",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  minlogintime: number | null;
-
-  @Column("int", {
-    name: "maxlogintime",
-    nullable: true,
-    comment: "最晚登录时间",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  maxlogintime: number | null;
-
-  @Column("int", {
-    name: "online",
-    nullable: true,
-    comment: "是否在线",
-    default: () => "'0'",
-  })
-  online: number | null;
-
-  @Column("int", {
-    name: "sex",
-    nullable: true,
-    comment: "性别",
-    default: () => "'0'",
-  })
-  sex: number | null;
-
-  @Column("int", {
-    name: "complete",
-    nullable: true,
-    comment: "是否完成",
-    default: () => "'0'",
-  })
-  complete: number | null;
-
-  @Column("int", {
-    name: "way",
-    nullable: true,
-    comment: "邮件用途\n",
-    default: () => "'0'",
-  })
-  way: number | null;
+     *
+     * @type { number }
+     * @memberof Servermail
+     */
+    @Column({ name: 'way' })
+    way: number;
 }

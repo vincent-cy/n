@@ -1,59 +1,85 @@
-import { Column, Entity, Index } from "typeorm";
-
-@Index("Index_death", ["actorid"], {})
-@Index("Index_kill", ["killerid"], {})
-@Entity("actordeath", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * actordeath
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Actordeath
+ */
+@Entity({
+    name: 'actordeath'
+})
 export class Actordeath {
-  @Column("int", {
-    name: "actorid",
-    comment: "玩家ID",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  actorid: number;
-
-  @Column("int", {
-    name: "killerid",
-    comment: "击杀者ID",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  killerid: number;
-
-  @Column("int", {
-    name: "deathtime",
-    comment: "死亡时间",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  deathtime: number;
-
-  @Column("varchar", { name: "killername", comment: "击杀者Name", length: 32 })
-  killername: string;
-
-  @Column("int", {
-    name: "killsceneid",
-    comment: "击杀场景",
-    default: () => "'0'",
-  })
-  killsceneid: number;
-
-  @Column("int", {
-    name: "killposx",
-    nullable: true,
-    comment: "击杀位置x",
-    default: () => "'0'",
-  })
-  killposx: number | null;
-
-  @Column("int", {
-    name: "killposy",
-    nullable: true,
-    comment: "击杀位置y",
-    default: () => "'0'",
-  })
-  killposy: number | null;
-
-  @Column("int", { name: "type", comment: "类型", default: () => "'0'" })
-  type: number;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Actordeath
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 玩家ID
+     *
+     * @type { number }
+     * @memberof Actordeath
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * 击杀者ID
+     *
+     * @type { number }
+     * @memberof Actordeath
+     */
+    @Column({ name: 'killerid' })
+    killerid: number;
+    /**
+     * 死亡时间
+     *
+     * @type { number }
+     * @memberof Actordeath
+     */
+    @Column({ name: 'deathtime' })
+    deathtime: number;
+    /**
+     * 击杀者Name
+     *
+     * @type { string }
+     * @memberof Actordeath
+     */
+    @Column({ name: 'killername' })
+    killername: string;
+    /**
+     * 击杀场景
+     *
+     * @type { number }
+     * @memberof Actordeath
+     */
+    @Column({ name: 'killsceneid' })
+    killsceneid: number;
+    /**
+     * 击杀位置x
+     *
+     * @type { number }
+     * @memberof Actordeath
+     */
+    @Column({ name: 'killposx' })
+    killposx: number;
+    /**
+     * 击杀位置y
+     *
+     * @type { number }
+     * @memberof Actordeath
+     */
+    @Column({ name: 'killposy' })
+    killposy: number;
+    /**
+     * 类型
+     *
+     * @type { number }
+     * @memberof Actordeath
+     */
+    @Column({ name: 'type' })
+    type: number;
 }

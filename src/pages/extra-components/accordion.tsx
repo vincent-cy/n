@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Accordion, AccordionItem, AccordionRefObject } from '@paljs/ui/Accordion';
 import { Button } from '@paljs/ui/Button';
 import { Card, CardBody } from '@paljs/ui/Card';

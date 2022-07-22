@@ -1,23 +1,69 @@
-import { Column, Entity, Index } from "typeorm";
-
-@Index("combatlog_id", ["actorid"], {})
-@Entity("combatlog", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * combatlog
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Combatlog
+ */
+@Entity({
+    name: 'combatlog'
+})
 export class Combatlog {
-  @Column("int", { name: "actorid", unsigned: true, default: () => "'0'" })
-  actorid: number;
-
-  @Column("int", { name: "type", default: () => "'0'" })
-  type: number;
-
-  @Column("int", { name: "result", default: () => "'0'" })
-  result: number;
-
-  @Column("int", { name: "targetid", default: () => "'0'" })
-  targetid: number;
-
-  @Column("varchar", { name: "targetname", length: 32, default: () => "'0'" })
-  targetname: string;
-
-  @Column("int", { name: "rank", default: () => "'0'" })
-  rank: number;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Combatlog
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * actorid
+     *
+     * @type { number }
+     * @memberof Combatlog
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * type
+     *
+     * @type { number }
+     * @memberof Combatlog
+     */
+    @Column({ name: 'type' })
+    type: number;
+    /**
+     * result
+     *
+     * @type { number }
+     * @memberof Combatlog
+     */
+    @Column({ name: 'result' })
+    result: number;
+    /**
+     * targetid
+     *
+     * @type { number }
+     * @memberof Combatlog
+     */
+    @Column({ name: 'targetid' })
+    targetid: number;
+    /**
+     * targetname
+     *
+     * @type { string }
+     * @memberof Combatlog
+     */
+    @Column({ name: 'targetname' })
+    targetname: string;
+    /**
+     * rank
+     *
+     * @type { number }
+     * @memberof Combatlog
+     */
+    @Column({ name: 'rank' })
+    rank: number;
 }

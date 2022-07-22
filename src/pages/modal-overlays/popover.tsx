@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import ContextMenu from '@paljs/ui/ContextMenu';
 import Col from '@paljs/ui/Col';

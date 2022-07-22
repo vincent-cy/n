@@ -1,99 +1,117 @@
-import { Column, Entity, Index, PrimaryGeneratedColumn } from "typeorm";
-
-@Index("AK_Key_account", ["account"], { unique: true })
-@Index("index_identity", ["identity"], {})
-@Entity("globaluser", { schema: "mmo_account" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * globaluser
+ * @Date 2022/7/22 15:16:22
+ * @author vincent
+ * @export
+ * @class Globaluser
+ */
+@Entity({
+    name: 'globaluser'
+})
 export class Globaluser {
-  @PrimaryGeneratedColumn({
-    type: "int",
-    name: "userid",
-    comment: "用户唯一ID，自增字段",
-    unsigned: true,
-  })
-  userid: number;
-
-  @Column("varchar", {
-    name: "account",
-    nullable: true,
-    unique: true,
-    comment: "用户帐户的字符串",
-    length: 64,
-  })
-  account: string | null;
-
-  @Column("varchar", {
-    name: "passwd",
-    nullable: true,
-    comment: "玩家的密码",
-    length: 32,
-  })
-  passwd: string | null;
-
-  @Column("varchar", {
-    name: "identity",
-    nullable: true,
-    comment: "玩家的身份证号码",
-    length: 32,
-  })
-  identity: string | null;
-
-  @Column("datetime", {
-    name: "createtime",
-    nullable: true,
-    comment: "帐号的创建时间",
-  })
-  createtime: Date | null;
-
-  @Column("datetime", {
-    name: "updatetime",
-    nullable: true,
-    comment: "上次登录时间",
-  })
-  updatetime: Date | null;
-
-  @Column("bigint", {
-    name: "updateip",
-    nullable: true,
-    comment: "用户上次登录的IP地址，64位整形IP地址，支持IPV6(现在记录创账号ip)",
-  })
-  updateip: string | null;
-
-  @Column("datetime", {
-    name: "offlinetime",
-    nullable: true,
-    comment: "用户离线时间，用于防沉迷判断当前登录距离上次下线是否足5小时",
-  })
-  offlinetime: Date | null;
-
-  @Column("int", {
-    name: "fcmonline",
-    nullable: true,
-    comment: "连续在线时间，用于进行防沉迷控制",
-    default: () => "'0'",
-  })
-  fcmonline: number | null;
-
-  @Column("int", {
-    name: "totalonline",
-    nullable: true,
-    comment: "账号自创建以来的累积在线时长，单位是秒",
-    default: () => "'0'",
-  })
-  totalonline: number | null;
-
-  @Column("int", {
-    name: "gmlevel",
-    nullable: true,
-    comment: "玩家的GM等级，普通玩家是0.GM等级越高表示权限越高。1-10级GM",
-    default: () => "'0'",
-  })
-  gmlevel: number | null;
-
-  @Column("int", {
-    name: "inserver",
-    nullable: true,
-    comment: "玩家在的服务器的index",
-    default: () => "'0'",
-  })
-  inserver: number | null;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Globaluser
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 用户唯一ID，自增字段
+     *
+     * @type { number }
+     * @memberof Globaluser
+     */
+    @Column('int',{ name: 'userid' })
+    userid: number;
+    /**
+     * 用户帐户的字符串
+     *
+     * @type { string }
+     * @memberof Globaluser
+     */
+    @Column('varchar',{ name: 'account' })
+    account: string;
+    /**
+     * 玩家的密码
+     *
+     * @type { string }
+     * @memberof Globaluser
+     */
+    @Column('varchar',{ name: 'passwd' })
+    passwd: string;
+    /**
+     * 玩家的身份证号码
+     *
+     * @type { string }
+     * @memberof Globaluser
+     */
+    @Column('varchar',{ name: 'identity' })
+    identity: string;
+    /**
+     * 帐号的创建时间
+     *
+     * @type { string }
+     * @memberof Globaluser
+     */
+    @Column('varchar',{ name: 'createtime' })
+    createtime: string;
+    /**
+     * 上次登录时间
+     *
+     * @type { string }
+     * @memberof Globaluser
+     */
+    @Column('varchar',{ name: 'updatetime' })
+    updatetime: string;
+    /**
+     * 用户上次登录的IP地址，64位整形IP地址，支持IPV6(现在记录创账号ip)
+     *
+     * @type { string }
+     * @memberof Globaluser
+     */
+    @Column('varchar',{ name: 'updateip' })
+    updateip: string;
+    /**
+     * 用户离线时间，用于防沉迷判断当前登录距离上次下线是否足5小时
+     *
+     * @type { string }
+     * @memberof Globaluser
+     */
+    @Column('varchar',{ name: 'offlinetime' })
+    offlinetime: string;
+    /**
+     * 连续在线时间，用于进行防沉迷控制
+     *
+     * @type { number }
+     * @memberof Globaluser
+     */
+    @Column('varchar',{ name: 'fcmonline' })
+    fcmonline: number;
+    /**
+     * 账号自创建以来的累积在线时长，单位是秒
+     *
+     * @type { number }
+     * @memberof Globaluser
+     */
+    @Column('varchar',{ name: 'totalonline' })
+    totalonline: number;
+    /**
+     * 玩家的GM等级，普通玩家是0.GM等级越高表示权限越高。1-10级GM
+     *
+     * @type { number }
+     * @memberof Globaluser
+     */
+    @Column('int',{ name: 'gmlevel' })
+    gmlevel: number;
+    /**
+     * 玩家在的服务器的index
+     *
+     * @type { number }
+     * @memberof Globaluser
+     */
+    @Column('int',{ name: 'inserver' })
+    inserver: number;
 }

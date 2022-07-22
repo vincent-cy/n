@@ -1,166 +1,189 @@
-import { Column, Entity, Index } from "typeorm";
-
-@Index("bagitem_id", ["actorid"], {})
-@Entity("actorhallows", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * actorhallows
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Actorhallows
+ */
+@Entity({
+    name: 'actorhallows'
+})
 export class Actorhallows {
-  @Column("int", {
-    primary: true,
-    name: "actorid",
-    comment: "角色ID",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  actorid: number;
-
-  @Column("int", {
-    name: "HallowsStar1",
-    nullable: true,
-    comment: "圣物兵魂升星1",
-    default: () => "'0'",
-  })
-  hallowsStar1: number | null;
-
-  @Column("int", {
-    name: "HallowsStar2",
-    nullable: true,
-    comment: "圣物兵魂升星2",
-    default: () => "'0'",
-  })
-  hallowsStar2: number | null;
-
-  @Column("int", {
-    name: "HallowsStar3",
-    nullable: true,
-    comment: "圣物兵魂升星3",
-    default: () => "'0'",
-  })
-  hallowsStar3: number | null;
-
-  @Column("int", {
-    name: "HallowsStar4",
-    nullable: true,
-    comment: "圣物兵魂升星3",
-    default: () => "'0'",
-  })
-  hallowsStar4: number | null;
-
-  @Column("int", {
-    name: "HallowsLorder1",
-    nullable: true,
-    comment: "圣物兵魂升阶1",
-    default: () => "'0'",
-  })
-  hallowsLorder1: number | null;
-
-  @Column("int", {
-    name: "HallowsLorder2",
-    nullable: true,
-    comment: "圣物兵魂升阶2",
-    default: () => "'0'",
-  })
-  hallowsLorder2: number | null;
-
-  @Column("int", {
-    name: "HallowsLorder3",
-    nullable: true,
-    comment: "圣物兵魂升阶3",
-    default: () => "'0'",
-  })
-  hallowsLorder3: number | null;
-
-  @Column("int", {
-    name: "HallowsLorder4",
-    nullable: true,
-    comment: "圣物兵魂升阶4",
-    default: () => "'0'",
-  })
-  hallowsLorder4: number | null;
-
-  @Column("int", {
-    name: "HallowsLv1",
-    nullable: true,
-    comment: "圣物兵魂升级1",
-    default: () => "'0'",
-  })
-  hallowsLv1: number | null;
-
-  @Column("int", {
-    name: "HallowsLv2",
-    nullable: true,
-    comment: "圣物兵魂升级2",
-    default: () => "'0'",
-  })
-  hallowsLv2: number | null;
-
-  @Column("int", {
-    name: "HallowsLv3",
-    nullable: true,
-    comment: "圣物兵魂升级3",
-    default: () => "'0'",
-  })
-  hallowsLv3: number | null;
-
-  @Column("int", {
-    name: "HallowsLv4",
-    nullable: true,
-    comment: "圣物兵魂升级4",
-    default: () => "'0'",
-  })
-  hallowsLv4: number | null;
-
-  @Column("varchar", {
-    name: "bestAttr1",
-    comment: "圣物极品属性1",
-    length: 50,
-  })
-  bestAttr1: string;
-
-  @Column("varchar", {
-    name: "bestAttr2",
-    comment: "圣物极品属性2",
-    length: 50,
-  })
-  bestAttr2: string;
-
-  @Column("varchar", {
-    name: "bestAttr3",
-    comment: "圣物极品属性3",
-    length: 50,
-  })
-  bestAttr3: string;
-
-  @Column("varchar", {
-    name: "bestAttr4",
-    comment: "圣物极品属性4",
-    length: 50,
-  })
-  bestAttr4: string;
-
-  @Column("varchar", {
-    name: "refining1",
-    comment: "圣物洗炼属性1",
-    length: 50,
-  })
-  refining1: string;
-
-  @Column("varchar", {
-    name: "refining2",
-    comment: "圣物洗炼属性2",
-    length: 50,
-  })
-  refining2: string;
-
-  @Column("varchar", {
-    name: "refining3",
-    comment: "圣物洗炼属性3",
-    length: 50,
-  })
-  refining3: string;
-
-  @Column("varchar", {
-    name: "refining4",
-    comment: "圣物洗炼属性4",
-    length: 50,
-  })
-  refining4: string;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Actorhallows
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 角色ID
+     *
+     * @type { number }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * 圣物兵魂升星1
+     *
+     * @type { number }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'HallowsStar1' })
+    HallowsStar1: number;
+    /**
+     * 圣物兵魂升星2
+     *
+     * @type { number }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'HallowsStar2' })
+    HallowsStar2: number;
+    /**
+     * 圣物兵魂升星3
+     *
+     * @type { number }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'HallowsStar3' })
+    HallowsStar3: number;
+    /**
+     * 圣物兵魂升星3
+     *
+     * @type { number }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'HallowsStar4' })
+    HallowsStar4: number;
+    /**
+     * 圣物兵魂升阶1
+     *
+     * @type { number }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'HallowsLorder1' })
+    HallowsLorder1: number;
+    /**
+     * 圣物兵魂升阶2
+     *
+     * @type { number }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'HallowsLorder2' })
+    HallowsLorder2: number;
+    /**
+     * 圣物兵魂升阶3
+     *
+     * @type { number }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'HallowsLorder3' })
+    HallowsLorder3: number;
+    /**
+     * 圣物兵魂升阶4
+     *
+     * @type { number }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'HallowsLorder4' })
+    HallowsLorder4: number;
+    /**
+     * 圣物兵魂升级1
+     *
+     * @type { number }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'HallowsLv1' })
+    HallowsLv1: number;
+    /**
+     * 圣物兵魂升级2
+     *
+     * @type { number }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'HallowsLv2' })
+    HallowsLv2: number;
+    /**
+     * 圣物兵魂升级3
+     *
+     * @type { number }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'HallowsLv3' })
+    HallowsLv3: number;
+    /**
+     * 圣物兵魂升级4
+     *
+     * @type { number }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'HallowsLv4' })
+    HallowsLv4: number;
+    /**
+     * 圣物极品属性1
+     *
+     * @type { string }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'bestAttr1' })
+    bestAttr1: string;
+    /**
+     * 圣物极品属性2
+     *
+     * @type { string }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'bestAttr2' })
+    bestAttr2: string;
+    /**
+     * 圣物极品属性3
+     *
+     * @type { string }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'bestAttr3' })
+    bestAttr3: string;
+    /**
+     * 圣物极品属性4
+     *
+     * @type { string }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'bestAttr4' })
+    bestAttr4: string;
+    /**
+     * 圣物洗炼属性1
+     *
+     * @type { string }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'refining1' })
+    refining1: string;
+    /**
+     * 圣物洗炼属性2
+     *
+     * @type { string }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'refining2' })
+    refining2: string;
+    /**
+     * 圣物洗炼属性3
+     *
+     * @type { string }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'refining3' })
+    refining3: string;
+    /**
+     * 圣物洗炼属性4
+     *
+     * @type { string }
+     * @memberof Actorhallows
+     */
+    @Column({ name: 'refining4' })
+    refining4: string;
 }

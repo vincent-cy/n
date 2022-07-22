@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Search, SearchProps } from '@paljs/ui/Search';
 import { Card, CardBody } from '@paljs/ui/Card';
 import Row from '@paljs/ui/Row';

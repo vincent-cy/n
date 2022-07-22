@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import { Card, CardBody } from '@paljs/ui/Card';
 import Layout from 'Layouts';

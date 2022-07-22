@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Tabs, Tab } from '@paljs/ui/Tabs';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';

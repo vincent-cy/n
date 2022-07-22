@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Status, Size, Shape } from '@paljs/ui/types';
 import { Card, CardBody } from '@paljs/ui/Card';
 import { Button, ButtonLink } from '@paljs/ui/Button';

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { Context } from 'koa';
+// import { Context } from 'koa';
 
 export default function Index() {
   const router = useRouter();

@@ -1,24 +1,37 @@
-import { Column, Entity, Index } from "typeorm";
-
-@Index("index_id", ["id"], {})
-@Entity("actorstaticcount", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * actorstaticcount
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Actorstaticcount
+ */
+@Entity({
+    name: 'actorstaticcount'
+})
 export class Actorstaticcount {
-  @Column("int", {
-    primary: true,
-    name: "id",
-    comment: "玩家id",
-    default: () => "'0'",
-  })
-  id: number;
-
-  @Column("int", {
-    primary: true,
-    name: "nstatictype",
-    comment: "计数器id",
-    default: () => "'0'",
-  })
-  nstatictype: number;
-
-  @Column("bigint", { name: "nvalue", comment: "值", default: () => "'0'" })
-  nvalue: string;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Actorstaticcount
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 计数器id
+     *
+     * @type { number }
+     * @memberof Actorstaticcount
+     */
+    @Column({ name: 'nstatictype' })
+    nstatictype: number;
+    /**
+     * 值
+     *
+     * @type { string }
+     * @memberof Actorstaticcount
+     */
+    @Column({ name: 'nvalue' })
+    nvalue: string;
 }

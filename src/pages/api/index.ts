@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { NextApiResponse, NextApiRequest } from 'next';
 import { getRepository } from 'typeorm';
 import { Globaluser } from '../../../server/model/mmo_account/entities/Globaluser';

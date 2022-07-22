@@ -1,40 +1,117 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-
-@Entity("actorrebate", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * actorrebate
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Actorrebate
+ */
+@Entity({
+    name: 'actorrebate'
+})
 export class Actorrebate {
-  @PrimaryGeneratedColumn({ type: "int", name: "nIndex", comment: "索引" })
-  nIndex: number;
-
-  @Column("int", { name: "nActorId", comment: "玩家Id" })
-  nActorId: number;
-
-  @Column("int", { name: "nId", comment: "返利序号" })
-  nId: number;
-
-  @Column("int", { name: "nTimeType", comment: "时间类型" })
-  nTimeType: number;
-
-  @Column("int", { name: "nStartTime", comment: "开始时间" })
-  nStartTime: number;
-
-  @Column("int", { name: "nEndTime", comment: "结束时间" })
-  nEndTime: number;
-
-  @Column("int", { name: "nClearTime", comment: "从数据库中删除的时间" })
-  nClearTime: number;
-
-  @Column("int", { name: "nOfflineType", comment: "活动类型" })
-  nOfflineType: number;
-
-  @Column("int", { name: "nAtonce", comment: "立刻发放奖励" })
-  nAtonce: number;
-
-  @Column("int", { name: "nOverlay", comment: "是否可叠加" })
-  nOverlay: number;
-
-  @Column("int", { name: "nYBValue", comment: "累计充值元宝数" })
-  nYbValue: number;
-
-  @Column("int", { name: "nStatus", comment: "领取状态" })
-  nStatus: number;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Actorrebate
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 索引
+     *
+     * @type { number }
+     * @memberof Actorrebate
+     */
+    @Column({ name: 'nIndex' })
+    nIndex: number;
+    /**
+     * 玩家Id
+     *
+     * @type { number }
+     * @memberof Actorrebate
+     */
+    @Column({ name: 'nActorId' })
+    nActorId: number;
+    /**
+     * 返利序号
+     *
+     * @type { number }
+     * @memberof Actorrebate
+     */
+    @Column({ name: 'nId' })
+    nId: number;
+    /**
+     * 时间类型
+     *
+     * @type { number }
+     * @memberof Actorrebate
+     */
+    @Column({ name: 'nTimeType' })
+    nTimeType: number;
+    /**
+     * 开始时间
+     *
+     * @type { number }
+     * @memberof Actorrebate
+     */
+    @Column({ name: 'nStartTime' })
+    nStartTime: number;
+    /**
+     * 结束时间
+     *
+     * @type { number }
+     * @memberof Actorrebate
+     */
+    @Column({ name: 'nEndTime' })
+    nEndTime: number;
+    /**
+     * 从数据库中删除的时间
+     *
+     * @type { number }
+     * @memberof Actorrebate
+     */
+    @Column({ name: 'nClearTime' })
+    nClearTime: number;
+    /**
+     * 活动类型
+     *
+     * @type { number }
+     * @memberof Actorrebate
+     */
+    @Column({ name: 'nOfflineType' })
+    nOfflineType: number;
+    /**
+     * 立刻发放奖励
+     *
+     * @type { number }
+     * @memberof Actorrebate
+     */
+    @Column({ name: 'nAtonce' })
+    nAtonce: number;
+    /**
+     * 是否可叠加
+     *
+     * @type { number }
+     * @memberof Actorrebate
+     */
+    @Column({ name: 'nOverlay' })
+    nOverlay: number;
+    /**
+     * 累计充值元宝数
+     *
+     * @type { number }
+     * @memberof Actorrebate
+     */
+    @Column({ name: 'nYBValue' })
+    nYBValue: number;
+    /**
+     * 领取状态
+     *
+     * @type { number }
+     * @memberof Actorrebate
+     */
+    @Column({ name: 'nStatus' })
+    nStatus: number;
 }

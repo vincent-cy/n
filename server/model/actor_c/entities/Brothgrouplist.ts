@@ -1,49 +1,61 @@
-import { Column, Entity, Index } from "typeorm";
-
-@Index("index_corpsid", ["id"], {})
-@Entity("brothgrouplist", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * brothgrouplist
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Brothgrouplist
+ */
+@Entity({
+    name: 'brothgrouplist'
+})
 export class Brothgrouplist {
-  @Column("bigint", { name: "id", comment: "战队id", default: () => "'0'" })
-  id: string;
-
-  @Column("varchar", {
-    name: "gname",
-    nullable: true,
-    comment: "战队名称",
-    length: 32,
-  })
-  gname: string | null;
-
-  @Column("int", {
-    name: "serverindex",
-    nullable: true,
-    comment: "逻辑服的索引号",
-    default: () => "'0'",
-  })
-  serverindex: number | null;
-
-  @Column("int", {
-    name: "actorid",
-    nullable: true,
-    comment: "队长id",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  actorid: number | null;
-
-  @Column("int", {
-    name: "score",
-    nullable: true,
-    comment: "战队积分",
-    default: () => "'0'",
-  })
-  score: number | null;
-
-  @Column("int", {
-    name: "reser",
-    nullable: true,
-    comment: "保留字段",
-    default: () => "'0'",
-  })
-  reser: number | null;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Brothgrouplist
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 战队名称
+     *
+     * @type { string }
+     * @memberof Brothgrouplist
+     */
+    @Column({ name: 'gname' })
+    gname: string;
+    /**
+     * 逻辑服的索引号
+     *
+     * @type { number }
+     * @memberof Brothgrouplist
+     */
+    @Column({ name: 'serverindex' })
+    serverindex: number;
+    /**
+     * 队长id
+     *
+     * @type { number }
+     * @memberof Brothgrouplist
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * 战队积分
+     *
+     * @type { number }
+     * @memberof Brothgrouplist
+     */
+    @Column({ name: 'score' })
+    score: number;
+    /**
+     * 保留字段
+     *
+     * @type { number }
+     * @memberof Brothgrouplist
+     */
+    @Column({ name: 'reser' })
+    reser: number;
 }

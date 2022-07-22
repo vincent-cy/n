@@ -1,17 +1,53 @@
-import { Column, Entity, Index } from "typeorm";
-
-@Index("Index_1", ["actorid"], {})
-@Entity("actoractivity", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * actoractivity
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Actoractivity
+ */
+@Entity({
+    name: 'actoractivity'
+})
 export class Actoractivity {
-  @Column("bigint", { primary: true, name: "actorid" })
-  actorid: string;
-
-  @Column("int", { primary: true, name: "nId" })
-  nId: number;
-
-  @Column("int", { name: "nActivityType" })
-  nActivityType: number;
-
-  @Column("int", { name: "nExpiredTime" })
-  nExpiredTime: number;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Actoractivity
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * actorid
+     *
+     * @type { string }
+     * @memberof Actoractivity
+     */
+    @Column({ name: 'actorid' })
+    actorid: string;
+    /**
+     * nId
+     *
+     * @type { number }
+     * @memberof Actoractivity
+     */
+    @Column({ name: 'nId' })
+    nId: number;
+    /**
+     * nActivityType
+     *
+     * @type { number }
+     * @memberof Actoractivity
+     */
+    @Column({ name: 'nActivityType' })
+    nActivityType: number;
+    /**
+     * nExpiredTime
+     *
+     * @type { number }
+     * @memberof Actoractivity
+     */
+    @Column({ name: 'nExpiredTime' })
+    nExpiredTime: number;
 }

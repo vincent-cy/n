@@ -1,53 +1,93 @@
-import { Column, Entity } from "typeorm";
-
-@Entity("combatinfo", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * combatinfo
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Combatinfo
+ */
+@Entity({
+    name: 'combatinfo'
+})
 export class Combatinfo {
-  @Column("int", {
-    primary: true,
-    name: "actorid",
-    comment: "角色id",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  actorid: number;
-
-  @Column("int", { name: "currank", comment: "当前排名", default: () => "'0'" })
-  currank: number;
-
-  @Column("int", { name: "maxrank", comment: "最高排名", default: () => "'0'" })
-  maxrank: number;
-
-  @Column("int", {
-    name: "lastrank",
-    comment: "上次排名",
-    default: () => "'0'",
-  })
-  lastrank: number;
-
-  @Column("int", {
-    name: "combatscore",
-    comment: "战力积分",
-    default: () => "'0'",
-  })
-  combatscore: number;
-
-  @Column("int", {
-    name: "challegenum",
-    comment: "挑战次数",
-    default: () => "'0'",
-  })
-  challegenum: number;
-
-  @Column("int", { name: "picknum", comment: "筛选次数", default: () => "'0'" })
-  picknum: number;
-
-  @Column("int", {
-    name: "cleartime",
-    comment: "清零时间",
-    default: () => "'0'",
-  })
-  cleartime: number;
-
-  @Column("int", { name: "cdflag", comment: "cd标志", default: () => "'0'" })
-  cdflag: number;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Combatinfo
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 角色id
+     *
+     * @type { number }
+     * @memberof Combatinfo
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * 当前排名
+     *
+     * @type { number }
+     * @memberof Combatinfo
+     */
+    @Column({ name: 'currank' })
+    currank: number;
+    /**
+     * 最高排名
+     *
+     * @type { number }
+     * @memberof Combatinfo
+     */
+    @Column({ name: 'maxrank' })
+    maxrank: number;
+    /**
+     * 上次排名
+     *
+     * @type { number }
+     * @memberof Combatinfo
+     */
+    @Column({ name: 'lastrank' })
+    lastrank: number;
+    /**
+     * 战力积分
+     *
+     * @type { number }
+     * @memberof Combatinfo
+     */
+    @Column({ name: 'combatscore' })
+    combatscore: number;
+    /**
+     * 挑战次数
+     *
+     * @type { number }
+     * @memberof Combatinfo
+     */
+    @Column({ name: 'challegenum' })
+    challegenum: number;
+    /**
+     * 筛选次数
+     *
+     * @type { number }
+     * @memberof Combatinfo
+     */
+    @Column({ name: 'picknum' })
+    picknum: number;
+    /**
+     * 清零时间
+     *
+     * @type { number }
+     * @memberof Combatinfo
+     */
+    @Column({ name: 'cleartime' })
+    cleartime: number;
+    /**
+     * cd标志
+     *
+     * @type { number }
+     * @memberof Combatinfo
+     */
+    @Column({ name: 'cdflag' })
+    cdflag: number;
 }

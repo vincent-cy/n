@@ -1,60 +1,77 @@
-import { Column, Entity } from "typeorm";
-
-@Entity("guildwar", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * guildwar
+ * @Date 2022/7/22 15:18:38
+ * @author vincent
+ * @export
+ * @class Guildwar
+ */
+@Entity({
+    name: 'guildwar'
+})
 export class Guildwar {
-  @Column("int", {
-    name: "guildid",
-    nullable: true,
-    comment: "帮派id",
-    unsigned: true,
-  })
-  guildid: number | null;
-
-  @Column("int", {
-    name: "relationship",
-    nullable: true,
-    comment: "目前两帮派的关系",
-  })
-  relationship: number | null;
-
-  @Column("int", {
-    name: "state",
-    nullable: true,
-    comment: "双方的状态",
-    default: () => "'0'",
-  })
-  state: number | null;
-
-  @Column("int", {
-    name: "warguildId",
-    nullable: true,
-    comment: "对方帮派的id",
-    unsigned: true,
-  })
-  warguildId: number | null;
-
-  @Column("int", {
-    name: "pkcount",
-    nullable: true,
-    comment: "杀敌数目",
-    default: () => "'0'",
-  })
-  pkcount: number | null;
-
-  @Column("int", {
-    name: "diecount",
-    nullable: true,
-    comment: "己方死亡数量",
-    default: () => "'0'",
-  })
-  diecount: number | null;
-
-  @Column("int", {
-    name: "nexttime",
-    nullable: true,
-    comment: "改变状态的时间",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  nexttime: number | null;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Guildwar
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 帮派id
+     *
+     * @type { number }
+     * @memberof Guildwar
+     */
+    @Column({ name: 'guildid' })
+    guildid: number;
+    /**
+     * 目前两帮派的关系
+     *
+     * @type { number }
+     * @memberof Guildwar
+     */
+    @Column({ name: 'relationship' })
+    relationship: number;
+    /**
+     * 双方的状态
+     *
+     * @type { number }
+     * @memberof Guildwar
+     */
+    @Column({ name: 'state' })
+    state: number;
+    /**
+     * 对方帮派的id
+     *
+     * @type { number }
+     * @memberof Guildwar
+     */
+    @Column({ name: 'warguildId' })
+    warguildId: number;
+    /**
+     * 杀敌数目
+     *
+     * @type { number }
+     * @memberof Guildwar
+     */
+    @Column({ name: 'pkcount' })
+    pkcount: number;
+    /**
+     * 己方死亡数量
+     *
+     * @type { number }
+     * @memberof Guildwar
+     */
+    @Column({ name: 'diecount' })
+    diecount: number;
+    /**
+     * 改变状态的时间
+     *
+     * @type { number }
+     * @memberof Guildwar
+     */
+    @Column({ name: 'nexttime' })
+    nexttime: number;
 }

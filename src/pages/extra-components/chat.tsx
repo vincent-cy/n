@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Chat, ChatForm, ChatMessages, MessageProps, AttachedFile } from '@paljs/ui/Chat';
 import { Card, CardBody } from '@paljs/ui/Card';
 import Row from '@paljs/ui/Row';

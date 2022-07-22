@@ -1,19 +1,45 @@
-import { Column, Entity, Index } from "typeorm";
-
-@Index("Index_accountid", ["accountid"], {})
-@Entity("accountpsw", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * accountpsw
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Accountpsw
+ */
+@Entity({
+    name: 'accountpsw'
+})
 export class Accountpsw {
-  @Column("int", {
-    name: "accountid",
-    nullable: true,
-    unsigned: true,
-    default: () => "'0'",
-  })
-  accountid: number | null;
-
-  @Column("int", { name: "serverindex", nullable: true, default: () => "'0'" })
-  serverindex: number | null;
-
-  @Column("varchar", { name: "psw", nullable: true, length: 32 })
-  psw: string | null;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Accountpsw
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * accountid
+     *
+     * @type { number }
+     * @memberof Accountpsw
+     */
+    @Column({ name: 'accountid' })
+    accountid: number;
+    /**
+     * serverindex
+     *
+     * @type { number }
+     * @memberof Accountpsw
+     */
+    @Column({ name: 'serverindex' })
+    serverindex: number;
+    /**
+     * psw
+     *
+     * @type { string }
+     * @memberof Accountpsw
+     */
+    @Column({ name: 'psw' })
+    psw: string;
 }

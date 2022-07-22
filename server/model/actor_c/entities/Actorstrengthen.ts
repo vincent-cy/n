@@ -1,17 +1,53 @@
-import { Column, Entity, Index } from "typeorm";
-
-@Index("index_id", ["actorid"], {})
-@Entity("actorstrengthen", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * actorstrengthen
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Actorstrengthen
+ */
+@Entity({
+    name: 'actorstrengthen'
+})
 export class Actorstrengthen {
-  @Column("int", { name: "actorid", comment: "玩家id", default: () => "'0'" })
-  actorid: number;
-
-  @Column("int", { name: "ntype", comment: "类型", default: () => "'0'" })
-  ntype: number;
-
-  @Column("int", { name: "npos", comment: "位置", default: () => "'0'" })
-  npos: number;
-
-  @Column("int", { name: "nlv", comment: "等级", default: () => "'0'" })
-  nlv: number;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Actorstrengthen
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 玩家id
+     *
+     * @type { number }
+     * @memberof Actorstrengthen
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * 类型
+     *
+     * @type { number }
+     * @memberof Actorstrengthen
+     */
+    @Column({ name: 'ntype' })
+    ntype: number;
+    /**
+     * 位置
+     *
+     * @type { number }
+     * @memberof Actorstrengthen
+     */
+    @Column({ name: 'npos' })
+    npos: number;
+    /**
+     * 等级
+     *
+     * @type { number }
+     * @memberof Actorstrengthen
+     */
+    @Column({ name: 'nlv' })
+    nlv: number;
 }

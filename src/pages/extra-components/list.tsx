@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { List, ListItem } from '@paljs/ui/List';
 import { Card } from '@paljs/ui/Card';
 import User from '@paljs/ui/User';

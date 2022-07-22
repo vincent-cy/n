@@ -1,38 +1,53 @@
-import { Column, Entity, Index } from "typeorm";
-
-@Index("index_actorid", ["nactorid"], {})
-@Entity("periodride", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * periodride
+ * @Date 2022/7/22 15:18:38
+ * @author vincent
+ * @export
+ * @class Periodride
+ */
+@Entity({
+    name: 'periodride'
+})
 export class Periodride {
-  @Column("int", {
-    name: "nactorid",
-    nullable: true,
-    comment: "玩家id",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  nactorid: number | null;
-
-  @Column("int", {
-    name: "nrideid",
-    nullable: true,
-    comment: "坐骑id",
-    default: () => "'0'",
-  })
-  nrideid: number | null;
-
-  @Column("int", {
-    name: "ntime",
-    nullable: true,
-    comment: "到期时间",
-    default: () => "'0'",
-  })
-  ntime: number | null;
-
-  @Column("int", {
-    name: "reserver",
-    nullable: true,
-    comment: "预留",
-    default: () => "'0'",
-  })
-  reserver: number | null;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Periodride
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 玩家id
+     *
+     * @type { number }
+     * @memberof Periodride
+     */
+    @Column({ name: 'nactorid' })
+    nactorid: number;
+    /**
+     * 坐骑id
+     *
+     * @type { number }
+     * @memberof Periodride
+     */
+    @Column({ name: 'nrideid' })
+    nrideid: number;
+    /**
+     * 到期时间
+     *
+     * @type { number }
+     * @memberof Periodride
+     */
+    @Column({ name: 'ntime' })
+    ntime: number;
+    /**
+     * 预留
+     *
+     * @type { number }
+     * @memberof Periodride
+     */
+    @Column({ name: 'reserver' })
+    reserver: number;
 }

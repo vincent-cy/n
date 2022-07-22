@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
 import Tooltip from '@paljs/ui/Tooltip';

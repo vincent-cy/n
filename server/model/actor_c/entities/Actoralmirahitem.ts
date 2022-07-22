@@ -1,28 +1,53 @@
-import { Column, Entity, Index } from "typeorm";
-
-@Index("Index_actor", ["actorid"], {})
-@Entity("actoralmirahitem", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * actoralmirahitem
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Actoralmirahitem
+ */
+@Entity({
+    name: 'actoralmirahitem'
+})
 export class Actoralmirahitem {
-  @Column("int", {
-    name: "actorid",
-    nullable: true,
-    comment: "角色ID",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  actorid: number | null;
-
-  @Column("int", { name: "nId", nullable: true, comment: "衣橱类型" })
-  nId: number | null;
-
-  @Column("int", {
-    name: "nlv",
-    nullable: true,
-    comment: "等级",
-    unsigned: true,
-  })
-  nlv: number | null;
-
-  @Column("int", { name: "ntakeon", nullable: true, comment: "是否穿在身上" })
-  ntakeon: number | null;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Actoralmirahitem
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 角色ID
+     *
+     * @type { number }
+     * @memberof Actoralmirahitem
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * 衣橱类型
+     *
+     * @type { number }
+     * @memberof Actoralmirahitem
+     */
+    @Column({ name: 'nId' })
+    nId: number;
+    /**
+     * 等级
+     *
+     * @type { number }
+     * @memberof Actoralmirahitem
+     */
+    @Column({ name: 'nlv' })
+    nlv: number;
+    /**
+     * 是否穿在身上
+     *
+     * @type { number }
+     * @memberof Actoralmirahitem
+     */
+    @Column({ name: 'ntakeon' })
+    ntakeon: number;
 }

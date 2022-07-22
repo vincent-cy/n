@@ -1,4 +1,7 @@
+import "reflect-metadata";
+
 import next from 'next';
+
 
 import Koa, { Context, Next } from 'koa';
 

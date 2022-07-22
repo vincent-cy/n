@@ -1,26 +1,45 @@
-import { Column, Entity } from "typeorm";
-
-@Entity("actorlootpet", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * actorlootpet
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Actorlootpet
+ */
+@Entity({
+    name: 'actorlootpet'
+})
 export class Actorlootpet {
-  @Column("int", {
-    primary: true,
-    name: "actorid",
-    comment: "玩家id",
-    default: () => "'0'",
-  })
-  actorid: number;
-
-  @Column("int", {
-    primary: true,
-    name: "type",
-    comment: "类型",
-    default: () => "'0'",
-  })
-  type: number;
-
-  @Column("int", { name: "id", comment: "id", default: () => "'0'" })
-  id: number;
-
-  @Column("int", { name: "continueTime", comment: "时间" })
-  continueTime: number;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Actorlootpet
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 玩家id
+     *
+     * @type { number }
+     * @memberof Actorlootpet
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * 类型
+     *
+     * @type { number }
+     * @memberof Actorlootpet
+     */
+    @Column({ name: 'type' })
+    type: number;
+    /**
+     * 时间
+     *
+     * @type { number }
+     * @memberof Actorlootpet
+     */
+    @Column({ name: 'continueTime' })
+    continueTime: number;
 }

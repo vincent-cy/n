@@ -1,157 +1,173 @@
-import { Column, Entity, Index } from "typeorm";
-
-@Index("Index_1", ["actorid"], {})
-@Entity("actorpets", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * actorpets
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Actorpets
+ */
+@Entity({
+    name: 'actorpets'
+})
 export class Actorpets {
-  @Column("bigint", {
-    name: "actorid",
-    nullable: true,
-    comment: "玩家的actorid",
-    unsigned: true,
-  })
-  actorid: string | null;
-
-  @Column("bigint", {
-    name: "exp",
-    nullable: true,
-    comment: "经验",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  exp: string | null;
-
-  @Column("int", {
-    name: "hp",
-    nullable: true,
-    comment: "当前的血",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  hp: number | null;
-
-  @Column("int", {
-    name: "mp",
-    nullable: true,
-    comment: "当前的蓝",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  mp: number | null;
-
-  @Column("char", { name: "name", nullable: true, comment: "名字", length: 32 })
-  name: string | null;
-
-  @Column("int", {
-    name: "circle",
-    nullable: true,
-    comment: "转数",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  circle: number | null;
-
-  @Column("int", {
-    name: "level",
-    nullable: true,
-    comment: "等级",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  level: number | null;
-
-  @Column("int", {
-    name: "ids",
-    nullable: true,
-    comment: "英雄的id,状态，头像合并起来的",
-    default: () => "'0'",
-  })
-  ids: number | null;
-
-  @Column("int", {
-    name: "modelid",
-    nullable: true,
-    comment: "模型id",
-    default: () => "'0'",
-  })
-  modelid: number | null;
-
-  @Column("int", {
-    name: "weaponappear",
-    nullable: true,
-    comment: "武器的外观",
-    default: () => "'0'",
-  })
-  weaponappear: number | null;
-
-  @Column("int", {
-    name: "score",
-    nullable: true,
-    comment: "评分",
-    default: () => "'0'",
-  })
-  score: number | null;
-
-  @Column("int", {
-    name: "vocation",
-    nullable: true,
-    comment: "职业",
-    default: () => "'0'",
-  })
-  vocation: number | null;
-
-  @Column("int", {
-    name: "sex",
-    nullable: true,
-    comment: "性别",
-    default: () => "'0'",
-  })
-  sex: number | null;
-
-  @Column("int", {
-    name: "swingappear",
-    nullable: true,
-    comment: "翅膀的外观",
-    default: () => "'0'",
-  })
-  swingappear: number | null;
-
-  @Column("int", {
-    name: "reserver1",
-    nullable: true,
-    comment: "保留的",
-    default: () => "'0'",
-  })
-  reserver1: number | null;
-
-  @Column("int", {
-    name: "reserver2",
-    nullable: true,
-    comment: "预留的2",
-    default: () => "'0'",
-  })
-  reserver2: number | null;
-
-  @Column("int", {
-    name: "stage",
-    nullable: true,
-    comment: "英雄阶",
-    default: () => "'0'",
-  })
-  stage: number | null;
-
-  @Column("int", {
-    name: "bodyforce",
-    nullable: true,
-    comment: "英雄体力",
-    default: () => "'0'",
-  })
-  bodyforce: number | null;
-
-  @Column("int", {
-    name: "bless",
-    nullable: true,
-    comment: "英雄祝福值",
-    default: () => "'0'",
-  })
-  bless: number | null;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Actorpets
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 玩家的actorid
+     *
+     * @type { string }
+     * @memberof Actorpets
+     */
+    @Column({ name: 'actorid' })
+    actorid: string;
+    /**
+     * 经验
+     *
+     * @type { string }
+     * @memberof Actorpets
+     */
+    @Column({ name: 'exp' })
+    exp: string;
+    /**
+     * 当前的血
+     *
+     * @type { number }
+     * @memberof Actorpets
+     */
+    @Column({ name: 'hp' })
+    hp: number;
+    /**
+     * 当前的蓝
+     *
+     * @type { number }
+     * @memberof Actorpets
+     */
+    @Column({ name: 'mp' })
+    mp: number;
+    /**
+     * 名字
+     *
+     * @type { string }
+     * @memberof Actorpets
+     */
+    @Column({ name: 'name' })
+    name: string;
+    /**
+     * 转数
+     *
+     * @type { number }
+     * @memberof Actorpets
+     */
+    @Column({ name: 'circle' })
+    circle: number;
+    /**
+     * 等级
+     *
+     * @type { number }
+     * @memberof Actorpets
+     */
+    @Column({ name: 'level' })
+    level: number;
+    /**
+     * 英雄的id,状态，头像合并起来的
+     *
+     * @type { number }
+     * @memberof Actorpets
+     */
+    @Column({ name: 'ids' })
+    ids: number;
+    /**
+     * 模型id
+     *
+     * @type { number }
+     * @memberof Actorpets
+     */
+    @Column({ name: 'modelid' })
+    modelid: number;
+    /**
+     * 武器的外观
+     *
+     * @type { number }
+     * @memberof Actorpets
+     */
+    @Column({ name: 'weaponappear' })
+    weaponappear: number;
+    /**
+     * 评分
+     *
+     * @type { number }
+     * @memberof Actorpets
+     */
+    @Column({ name: 'score' })
+    score: number;
+    /**
+     * 职业
+     *
+     * @type { number }
+     * @memberof Actorpets
+     */
+    @Column({ name: 'vocation' })
+    vocation: number;
+    /**
+     * 性别
+     *
+     * @type { number }
+     * @memberof Actorpets
+     */
+    @Column({ name: 'sex' })
+    sex: number;
+    /**
+     * 翅膀的外观
+     *
+     * @type { number }
+     * @memberof Actorpets
+     */
+    @Column({ name: 'swingappear' })
+    swingappear: number;
+    /**
+     * 保留的
+     *
+     * @type { number }
+     * @memberof Actorpets
+     */
+    @Column({ name: 'reserver1' })
+    reserver1: number;
+    /**
+     * 预留的2
+     *
+     * @type { number }
+     * @memberof Actorpets
+     */
+    @Column({ name: 'reserver2' })
+    reserver2: number;
+    /**
+     * 英雄阶
+     *
+     * @type { number }
+     * @memberof Actorpets
+     */
+    @Column({ name: 'stage' })
+    stage: number;
+    /**
+     * 英雄体力
+     *
+     * @type { number }
+     * @memberof Actorpets
+     */
+    @Column({ name: 'bodyforce' })
+    bodyforce: number;
+    /**
+     * 英雄祝福值
+     *
+     * @type { number }
+     * @memberof Actorpets
+     */
+    @Column({ name: 'bless' })
+    bless: number;
 }

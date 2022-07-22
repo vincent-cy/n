@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Card, CardBody, CardHeader, CardFooter } from '@paljs/ui/Card';
 import RevealCard from '@paljs/ui/RevealCard';
 import Row from '@paljs/ui/Row';

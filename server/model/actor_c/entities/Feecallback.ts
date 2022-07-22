@@ -1,67 +1,109 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-
-@Entity("feecallback", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * feecallback
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Feecallback
+ */
+@Entity({
+    name: 'feecallback'
+})
 export class Feecallback {
-  @PrimaryGeneratedColumn({ type: "int", name: "id", unsigned: true })
-  id: number;
-
-  @Column("varchar", { name: "pfid", comment: "平台id", length: 32 })
-  pfid: string;
-
-  @Column("int", {
-    name: "serverid",
-    comment: "服务器id",
-    default: () => "'0'",
-  })
-  serverid: number;
-
-  @Column("int", { name: "actorid", comment: "角色id", default: () => "'0'" })
-  actorid: number;
-
-  @Column("varchar", { name: "account", comment: "账户名", length: 80 })
-  account: string;
-
-  @Column("varchar", {
-    name: "prodid",
-    comment: "商品id",
-    length: 48,
-    default: () => "'0'",
-  })
-  prodid: string;
-
-  @Column("int", { name: "num" })
-  num: number;
-
-  @Column("varchar", { name: "token", comment: "验证", length: 64 })
-  token: string;
-
-  @Column("int", {
-    name: "flag",
-    nullable: true,
-    comment: "检测标志, 0待通知，1通知中，2已通知，3充值中，4已充值",
-    default: () => "'0'",
-  })
-  flag: number | null;
-
-  @Column("datetime", {
-    name: "created_at",
-    nullable: true,
-    comment: "记录时间",
-  })
-  createdAt: Date | null;
-
-  @Column("float", {
-    name: "amt",
-    comment: "折扣后充值金额",
-    precision: 12,
-    default: () => "'0'",
-  })
-  amt: number;
-
-  @Column("int", {
-    name: "oldserverid",
-    comment: "原服serverid",
-    default: () => "'0'",
-  })
-  oldserverid: number;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Feecallback
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 平台id
+     *
+     * @type { string }
+     * @memberof Feecallback
+     */
+    @Column({ name: 'pfid' })
+    pfid: string;
+    /**
+     * 服务器id
+     *
+     * @type { number }
+     * @memberof Feecallback
+     */
+    @Column({ name: 'serverid' })
+    serverid: number;
+    /**
+     * 角色id
+     *
+     * @type { number }
+     * @memberof Feecallback
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * 账户名
+     *
+     * @type { string }
+     * @memberof Feecallback
+     */
+    @Column({ name: 'account' })
+    account: string;
+    /**
+     * 商品id
+     *
+     * @type { string }
+     * @memberof Feecallback
+     */
+    @Column({ name: 'prodid' })
+    prodid: string;
+    /**
+     * num
+     *
+     * @type { number }
+     * @memberof Feecallback
+     */
+    @Column({ name: 'num' })
+    num: number;
+    /**
+     * 验证
+     *
+     * @type { string }
+     * @memberof Feecallback
+     */
+    @Column({ name: 'token' })
+    token: string;
+    /**
+     * 检测标志, 0待通知，1通知中，2已通知，3充值中，4已充值
+     *
+     * @type { number }
+     * @memberof Feecallback
+     */
+    @Column({ name: 'flag' })
+    flag: number;
+    /**
+     * 记录时间
+     *
+     * @type { string }
+     * @memberof Feecallback
+     */
+    @Column({ name: 'created_at' })
+    createdAt: string;
+    /**
+     * 折扣后充值金额
+     *
+     * @type { string }
+     * @memberof Feecallback
+     */
+    @Column({ name: 'amt' })
+    amt: string;
+    /**
+     * 原服serverid
+     *
+     * @type { number }
+     * @memberof Feecallback
+     */
+    @Column({ name: 'oldserverid' })
+    oldserverid: number;
 }

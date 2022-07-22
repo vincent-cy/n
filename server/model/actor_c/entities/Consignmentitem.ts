@@ -1,172 +1,197 @@
-import { Column, Entity, Index } from "typeorm";
-
-@Index("consignItem_id", ["actorid"], {})
-@Entity("consignmentitem", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * consignmentitem
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Consignmentitem
+ */
+@Entity({
+    name: 'consignmentitem'
+})
 export class Consignmentitem {
-  @Column("int", {
-    name: "actorid",
-    nullable: true,
-    comment: "角色ID",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  actorid: number | null;
-
-  @Column("bigint", {
-    name: "itemguid",
-    nullable: true,
-    comment: "物品的Guid",
-    default: () => "'0'",
-  })
-  itemguid: string | null;
-
-  @Column("int", {
-    name: "itemidquastrong",
-    nullable: true,
-    comment: "物品的ID",
-    default: () => "'0'",
-  })
-  itemidquastrong: number | null;
-
-  @Column("int", {
-    name: "itemduration",
-    nullable: true,
-    comment: "物品的星级",
-    default: () => "'0'",
-  })
-  itemduration: number | null;
-
-  @Column("int", {
-    name: "itemcountflag",
-    nullable: true,
-    comment: "物品的数量",
-    default: () => "'0'",
-  })
-  itemcountflag: number | null;
-
-  @Column("int", {
-    name: "iteminlayhole",
-    nullable: true,
-    comment: "物品的打孔信息",
-    default: () => "'0'",
-  })
-  iteminlayhole: number | null;
-
-  @Column("int", {
-    name: "itemtime",
-    nullable: true,
-    comment: "物品的过期时间",
-    default: () => "'0'",
-  })
-  itemtime: number | null;
-
-  @Column("int", {
-    name: "itemreservs",
-    nullable: true,
-    comment: "保留",
-    default: () => "'0'",
-  })
-  itemreservs: number | null;
-
-  @Column("int", {
-    name: "itemsmith1",
-    nullable: true,
-    comment: "极品属性1",
-    default: () => "'0'",
-  })
-  itemsmith1: number | null;
-
-  @Column("int", {
-    name: "itemsmith2",
-    nullable: true,
-    comment: "极品属性2",
-    default: () => "'0'",
-  })
-  itemsmith2: number | null;
-
-  @Column("int", {
-    name: "itemsmith3",
-    nullable: true,
-    comment: "极品属性3",
-    default: () => "'0'",
-  })
-  itemsmith3: number | null;
-
-  @Column("int", {
-    name: "itemsmith4",
-    nullable: true,
-    comment: "极品属性4",
-    default: () => "'0'",
-  })
-  itemsmith4: number | null;
-
-  @Column("int", {
-    name: "itemsmith5",
-    nullable: true,
-    comment: "极品属性5",
-    default: () => "'0'",
-  })
-  itemsmith5: number | null;
-
-  @Column("int", {
-    name: "itemreservs2",
-    nullable: true,
-    comment: "保留字节2",
-    default: () => "'0'",
-  })
-  itemreservs2: number | null;
-
-  @Column("int", {
-    name: "initsmith",
-    nullable: true,
-    comment: "初始化的精锻属性",
-    default: () => "'0'",
-  })
-  initsmith: number | null;
-
-  @Column("int", {
-    name: "selltime",
-    nullable: true,
-    comment: "寄卖的时间",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  selltime: number | null;
-
-  @Column("int", {
-    name: "price",
-    nullable: true,
-    comment: "物品单价",
-    default: () => "'0'",
-  })
-  price: number | null;
-
-  @Column("int", {
-    name: "state",
-    nullable: true,
-    comment: "状态",
-    default: () => "'0'",
-  })
-  state: number | null;
-
-  @Column("int", {
-    name: "serverindex",
-    nullable: true,
-    comment: "服务器id",
-    default: () => "'0'",
-  })
-  serverindex: number | null;
-
-  @Column("varchar", { name: "bestAttr", comment: "极品属性", length: 50 })
-  bestAttr: string;
-
-  @Column("varchar", { name: "sourcename", comment: "归属name", length: 200 })
-  sourcename: string;
-
-  @Column("int", {
-    name: "autoid",
-    comment: "是否是系统",
-    default: () => "'0'",
-  })
-  autoid: number;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 角色ID
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * 物品的Guid
+     *
+     * @type { string }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'itemguid' })
+    itemguid: string;
+    /**
+     * 物品的ID
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'itemidquastrong' })
+    itemidquastrong: number;
+    /**
+     * 物品的星级
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'itemduration' })
+    itemduration: number;
+    /**
+     * 物品的数量
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'itemcountflag' })
+    itemcountflag: number;
+    /**
+     * 物品的打孔信息
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'iteminlayhole' })
+    iteminlayhole: number;
+    /**
+     * 物品的过期时间
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'itemtime' })
+    itemtime: number;
+    /**
+     * 保留
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'itemreservs' })
+    itemreservs: number;
+    /**
+     * 极品属性1
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'itemsmith1' })
+    itemsmith1: number;
+    /**
+     * 极品属性2
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'itemsmith2' })
+    itemsmith2: number;
+    /**
+     * 极品属性3
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'itemsmith3' })
+    itemsmith3: number;
+    /**
+     * 极品属性4
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'itemsmith4' })
+    itemsmith4: number;
+    /**
+     * 极品属性5
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'itemsmith5' })
+    itemsmith5: number;
+    /**
+     * 保留字节2
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'itemreservs2' })
+    itemreservs2: number;
+    /**
+     * 初始化的精锻属性
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'initsmith' })
+    initsmith: number;
+    /**
+     * 寄卖的时间
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'selltime' })
+    selltime: number;
+    /**
+     * 物品单价
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'price' })
+    price: number;
+    /**
+     * 状态
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'state' })
+    state: number;
+    /**
+     * 服务器id
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'serverindex' })
+    serverindex: number;
+    /**
+     * 极品属性
+     *
+     * @type { string }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'bestAttr' })
+    bestAttr: string;
+    /**
+     * 归属name
+     *
+     * @type { string }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'sourcename' })
+    sourcename: string;
+    /**
+     * 是否是系统
+     *
+     * @type { number }
+     * @memberof Consignmentitem
+     */
+    @Column({ name: 'autoid' })
+    autoid: number;
 }

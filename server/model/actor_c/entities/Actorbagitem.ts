@@ -1,138 +1,173 @@
-import { Column, Entity, Index } from "typeorm";
-
-@Index("bagitem_id", ["actorid"], {})
-@Entity("actorbagitem", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * actorbagitem
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Actorbagitem
+ */
+@Entity({
+    name: 'actorbagitem'
+})
 export class Actorbagitem {
-  @Column("int", {
-    name: "actorid",
-    nullable: true,
-    comment: "角色ID",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  actorid: number | null;
-
-  @Column("bigint", {
-    name: "itemguid",
-    nullable: true,
-    comment: "物品的Guid是",
-    default: () => "'0'",
-  })
-  itemguid: string | null;
-
-  @Column("int", {
-    name: "itemidquastrong",
-    nullable: true,
-    comment: "物品的ID，品质等级，强化等级",
-    default: () => "'0'",
-  })
-  itemidquastrong: number | null;
-
-  @Column("int", {
-    name: "itemduration",
-    nullable: true,
-    comment: "物品的耐久以及耐久上限",
-    default: () => "'0'",
-  })
-  itemduration: number | null;
-
-  @Column("int", {
-    name: "itemcountflag",
-    nullable: true,
-    comment: "物品的数量以及标记",
-    default: () => "'0'",
-  })
-  itemcountflag: number | null;
-
-  @Column("int", {
-    name: "iteminlayhole",
-    nullable: true,
-    comment: "物品的打孔信息",
-    default: () => "'0'",
-  })
-  iteminlayhole: number | null;
-
-  @Column("int", {
-    name: "itemtime",
-    nullable: true,
-    comment: "物品的过期时间",
-    default: () => "'0'",
-  })
-  itemtime: number | null;
-
-  @Column("int", {
-    name: "itemreservs",
-    nullable: true,
-    comment: "保留",
-    default: () => "'0'",
-  })
-  itemreservs: number | null;
-
-  @Column("int", {
-    name: "itemsmith1",
-    nullable: true,
-    comment: "极品属性1",
-    default: () => "'0'",
-  })
-  itemsmith1: number | null;
-
-  @Column("int", {
-    name: "itemsmith2",
-    nullable: true,
-    comment: "极品属性2",
-    default: () => "'0'",
-  })
-  itemsmith2: number | null;
-
-  @Column("int", {
-    name: "itemsmith3",
-    nullable: true,
-    comment: "极品属性3",
-    default: () => "'0'",
-  })
-  itemsmith3: number | null;
-
-  @Column("int", {
-    name: "itemsmith4",
-    nullable: true,
-    comment: "极品属性4",
-    default: () => "'0'",
-  })
-  itemsmith4: number | null;
-
-  @Column("int", {
-    name: "itemsmith5",
-    nullable: true,
-    comment: "极品属性5",
-    default: () => "'0'",
-  })
-  itemsmith5: number | null;
-
-  @Column("int", {
-    name: "itemreservs2",
-    nullable: true,
-    comment: "保留字节2",
-    default: () => "'0'",
-  })
-  itemreservs2: number | null;
-
-  @Column("int", {
-    name: "initsmith",
-    nullable: true,
-    comment: "初始化的精锻属性",
-    default: () => "'0'",
-  })
-  initsmith: number | null;
-
-  @Column("varchar", { name: "bestAttr", comment: "极品属性", length: 50 })
-  bestAttr: string;
-
-  @Column("int", { name: "itemtype", comment: "道具类型" })
-  itemtype: number;
-
-  @Column("varchar", { name: "refining", comment: "洗炼属性", length: 50 })
-  refining: string;
-
-  @Column("varchar", { name: "sourcename", comment: "归属name", length: 200 })
-  sourcename: string;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Actorbagitem
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 角色ID
+     *
+     * @type { number }
+     * @memberof Actorbagitem
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * 物品的Guid是
+     *
+     * @type { string }
+     * @memberof Actorbagitem
+     */
+    @Column({ name: 'itemguid' })
+    itemguid: string;
+    /**
+     * 物品的ID，品质等级，强化等级
+     *
+     * @type { number }
+     * @memberof Actorbagitem
+     */
+    @Column({ name: 'itemidquastrong' })
+    itemidquastrong: number;
+    /**
+     * 物品的耐久以及耐久上限
+     *
+     * @type { number }
+     * @memberof Actorbagitem
+     */
+    @Column({ name: 'itemduration' })
+    itemduration: number;
+    /**
+     * 物品的数量以及标记
+     *
+     * @type { number }
+     * @memberof Actorbagitem
+     */
+    @Column({ name: 'itemcountflag' })
+    itemcountflag: number;
+    /**
+     * 物品的打孔信息
+     *
+     * @type { number }
+     * @memberof Actorbagitem
+     */
+    @Column({ name: 'iteminlayhole' })
+    iteminlayhole: number;
+    /**
+     * 物品的过期时间
+     *
+     * @type { number }
+     * @memberof Actorbagitem
+     */
+    @Column({ name: 'itemtime' })
+    itemtime: number;
+    /**
+     * 保留
+     *
+     * @type { number }
+     * @memberof Actorbagitem
+     */
+    @Column({ name: 'itemreservs' })
+    itemreservs: number;
+    /**
+     * 极品属性1
+     *
+     * @type { number }
+     * @memberof Actorbagitem
+     */
+    @Column({ name: 'itemsmith1' })
+    itemsmith1: number;
+    /**
+     * 极品属性2
+     *
+     * @type { number }
+     * @memberof Actorbagitem
+     */
+    @Column({ name: 'itemsmith2' })
+    itemsmith2: number;
+    /**
+     * 极品属性3
+     *
+     * @type { number }
+     * @memberof Actorbagitem
+     */
+    @Column({ name: 'itemsmith3' })
+    itemsmith3: number;
+    /**
+     * 极品属性4
+     *
+     * @type { number }
+     * @memberof Actorbagitem
+     */
+    @Column({ name: 'itemsmith4' })
+    itemsmith4: number;
+    /**
+     * 极品属性5
+     *
+     * @type { number }
+     * @memberof Actorbagitem
+     */
+    @Column({ name: 'itemsmith5' })
+    itemsmith5: number;
+    /**
+     * 保留字节2
+     *
+     * @type { number }
+     * @memberof Actorbagitem
+     */
+    @Column({ name: 'itemreservs2' })
+    itemreservs2: number;
+    /**
+     * 初始化的精锻属性
+     *
+     * @type { number }
+     * @memberof Actorbagitem
+     */
+    @Column({ name: 'initsmith' })
+    initsmith: number;
+    /**
+     * 极品属性
+     *
+     * @type { string }
+     * @memberof Actorbagitem
+     */
+    @Column({ name: 'bestAttr' })
+    bestAttr: string;
+    /**
+     * 道具类型
+     *
+     * @type { number }
+     * @memberof Actorbagitem
+     */
+    @Column({ name: 'itemtype' })
+    itemtype: number;
+    /**
+     * 洗炼属性
+     *
+     * @type { string }
+     * @memberof Actorbagitem
+     */
+    @Column({ name: 'refining' })
+    refining: string;
+    /**
+     * 归属name
+     *
+     * @type { string }
+     * @memberof Actorbagitem
+     */
+    @Column({ name: 'sourcename' })
+    sourcename: string;
 }

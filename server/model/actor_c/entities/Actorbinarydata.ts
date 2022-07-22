@@ -1,44 +1,61 @@
-import { Column, Entity } from "typeorm";
-
-@Entity("actorbinarydata", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * actorbinarydata
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Actorbinarydata
+ */
+@Entity({
+    name: 'actorbinarydata'
+})
 export class Actorbinarydata {
-  @Column("bigint", {
-    primary: true,
-    name: "actorid",
-    comment: "玩家的actorid",
-    unsigned: true,
-  })
-  actorid: string;
-
-  @Column("varbinary", {
-    name: "quest",
-    nullable: true,
-    comment: "任务数据",
-    length: 256,
-  })
-  quest: Buffer | null;
-
-  @Column("varbinary", {
-    name: "achievefinishstate",
-    nullable: true,
-    comment: "成就完成和是否领取奖励的字段",
-    length: 750,
-  })
-  achievefinishstate: Buffer | null;
-
-  @Column("varbinary", {
-    name: "achieveeventdata",
-    nullable: true,
-    comment: "成就事件的触发次数字段",
-    length: 750,
-  })
-  achieveeventdata: Buffer | null;
-
-  @Column("varbinary", {
-    name: "titles",
-    nullable: true,
-    comment: "玩家的称号列表",
-    length: 32,
-  })
-  titles: Buffer | null;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Actorbinarydata
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 玩家的actorid
+     *
+     * @type { string }
+     * @memberof Actorbinarydata
+     */
+    @Column({ name: 'actorid' })
+    actorid: string;
+    /**
+     * 任务数据
+     *
+     * @type { string }
+     * @memberof Actorbinarydata
+     */
+    @Column({ name: 'quest' })
+    quest: string;
+    /**
+     * 成就完成和是否领取奖励的字段
+     *
+     * @type { string }
+     * @memberof Actorbinarydata
+     */
+    @Column({ name: 'achievefinishstate' })
+    achievefinishstate: string;
+    /**
+     * 成就事件的触发次数字段
+     *
+     * @type { string }
+     * @memberof Actorbinarydata
+     */
+    @Column({ name: 'achieveeventdata' })
+    achieveeventdata: string;
+    /**
+     * 玩家的称号列表
+     *
+     * @type { string }
+     * @memberof Actorbinarydata
+     */
+    @Column({ name: 'titles' })
+    titles: string;
 }

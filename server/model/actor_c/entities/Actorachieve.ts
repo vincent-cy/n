@@ -1,24 +1,45 @@
-import { Column, Entity, Index } from "typeorm";
-
-@Index("actorid_index", ["actorid"], {})
-@Entity("actorachieve", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * actorachieve
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Actorachieve
+ */
+@Entity({
+    name: 'actorachieve'
+})
 export class Actorachieve {
-  @Column("int", {
-    primary: true,
-    name: "actorid",
-    comment: "玩家id",
-    default: () => "'0'",
-  })
-  actorid: number;
-
-  @Column("int", {
-    primary: true,
-    name: "achievetype",
-    comment: "成就id  成就类型*1000+子成就类型",
-    default: () => "'0'",
-  })
-  achievetype: number;
-
-  @Column("bigint", { name: "nValue", default: () => "'0'" })
-  nValue: string;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Actorachieve
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 玩家id
+     *
+     * @type { number }
+     * @memberof Actorachieve
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * 成就id  成就类型*1000+子成就类型
+     *
+     * @type { number }
+     * @memberof Actorachieve
+     */
+    @Column({ name: 'achievetype' })
+    achievetype: number;
+    /**
+     * nValue
+     *
+     * @type { string }
+     * @memberof Actorachieve
+     */
+    @Column({ name: 'nValue' })
+    nValue: string;
 }

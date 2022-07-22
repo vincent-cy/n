@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react';
 import { Card, CardBody } from '@paljs/ui/Card';

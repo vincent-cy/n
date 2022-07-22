@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Card, CardBody, CardHeader, CardFooter } from '@paljs/ui/Card';
 import FlipCard from '@paljs/ui/FlipCard';
 import Row from '@paljs/ui/Row';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Button } from '@paljs/ui/Button';
 import Spinner from '@paljs/ui/Spinner';
 import { Tabs, Tab } from '@paljs/ui/Tabs';

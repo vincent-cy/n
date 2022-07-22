@@ -1,37 +1,61 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-
-@Entity("serverroute", { schema: "mmo_account" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * serverroute
+ * @Date 2022/7/22 15:16:22
+ * @author vincent
+ * @export
+ * @class Serverroute
+ */
+@Entity({
+    name: 'serverroute'
+})
 export class Serverroute {
-  @PrimaryGeneratedColumn({ type: "int", name: "id", comment: "主键" })
-  id: number;
-
-  @Column("int", { name: "serverid", nullable: true, comment: "服务器id" })
-  serverid: number | null;
-
-  @Column("varchar", {
-    name: "hostname",
-    nullable: true,
-    comment: "网关的ip或者名字",
-    length: 124,
-  })
-  hostname: string | null;
-
-  @Column("int", { name: "port", nullable: true, comment: "网关的端口" })
-  port: number | null;
-
-  @Column("int", {
-    name: "cserverid",
-    nullable: true,
-    comment: "连接的公共服务器Id",
-    default: () => "'0'",
-  })
-  cserverid: number | null;
-
-  @Column("varchar", {
-    name: "servername",
-    nullable: true,
-    comment: "服务器名称",
-    length: 32,
-  })
-  servername: string | null;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Serverroute
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 服务器id
+     *
+     * @type { number }
+     * @memberof Serverroute
+     */
+    @Column({ name: 'serverid' })
+    serverid: number;
+    /**
+     * 网关的ip或者名字
+     *
+     * @type { string }
+     * @memberof Serverroute
+     */
+    @Column({ name: 'hostname' })
+    hostname: string;
+    /**
+     * 网关的端口
+     *
+     * @type { number }
+     * @memberof Serverroute
+     */
+    @Column({ name: 'port' })
+    port: number;
+    /**
+     * 连接的公共服务器Id
+     *
+     * @type { number }
+     * @memberof Serverroute
+     */
+    @Column({ name: 'cserverid' })
+    cserverid: number;
+    /**
+     * 服务器名称
+     *
+     * @type { string }
+     * @memberof Serverroute
+     */
+    @Column({ name: 'servername' })
+    servername: string;
 }

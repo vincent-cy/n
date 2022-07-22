@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Progress from '@paljs/ui/ProgressBar';
 import { Status } from '@paljs/ui/types';
 import { Card, CardBody } from '@paljs/ui/Card';

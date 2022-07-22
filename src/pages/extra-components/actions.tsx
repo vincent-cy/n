@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Actions, ActionType } from '@paljs/ui/Actions';
 import { Card, CardBody } from '@paljs/ui/Card';
 import Row from '@paljs/ui/Row';

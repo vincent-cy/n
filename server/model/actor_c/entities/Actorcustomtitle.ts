@@ -1,29 +1,45 @@
-import { Column, Entity, Index } from "typeorm";
-
-@Index("Index_actorid", ["actorid"], {})
-@Entity("actorcustomtitle", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * actorcustomtitle
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Actorcustomtitle
+ */
+@Entity({
+    name: 'actorcustomtitle'
+})
 export class Actorcustomtitle {
-  @Column("int", {
-    name: "actorid",
-    nullable: true,
-    unsigned: true,
-    default: () => "'0'",
-  })
-  actorid: number | null;
-
-  @Column("int", {
-    name: "idmakelong",
-    nullable: true,
-    unsigned: true,
-    default: () => "'0'",
-  })
-  idmakelong: number | null;
-
-  @Column("int", {
-    name: "remaintime",
-    nullable: true,
-    unsigned: true,
-    default: () => "'0'",
-  })
-  remaintime: number | null;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Actorcustomtitle
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * actorid
+     *
+     * @type { number }
+     * @memberof Actorcustomtitle
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * idmakelong
+     *
+     * @type { number }
+     * @memberof Actorcustomtitle
+     */
+    @Column({ name: 'idmakelong' })
+    idmakelong: number;
+    /**
+     * remaintime
+     *
+     * @type { number }
+     * @memberof Actorcustomtitle
+     */
+    @Column({ name: 'remaintime' })
+    remaintime: number;
 }

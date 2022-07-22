@@ -1,27 +1,45 @@
-import { Column, Entity, Index } from "typeorm";
-
-@Index("index", ["actorid"], {})
-@Entity("actorghost", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * actorghost
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Actorghost
+ */
+@Entity({
+    name: 'actorghost'
+})
 export class Actorghost {
-  @Column("int", {
-    primary: true,
-    name: "actorid",
-    comment: "玩家id",
-    default: () => "'0'",
-  })
-  actorid: number;
-
-  @Column("int", {
-    primary: true,
-    name: "id",
-    comment: "id",
-    default: () => "'0'",
-  })
-  id: number;
-
-  @Column("int", { name: "lv", comment: "等级" })
-  lv: number;
-
-  @Column("int", { name: "bless", comment: "祝福值", default: () => "'0'" })
-  bless: number;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Actorghost
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 玩家id
+     *
+     * @type { number }
+     * @memberof Actorghost
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * 等级
+     *
+     * @type { number }
+     * @memberof Actorghost
+     */
+    @Column({ name: 'lv' })
+    lv: number;
+    /**
+     * 祝福值
+     *
+     * @type { number }
+     * @memberof Actorghost
+     */
+    @Column({ name: 'bless' })
+    bless: number;
 }

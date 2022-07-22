@@ -1,32 +1,45 @@
-import { Column, Entity, Index } from "typeorm";
-
-@Index("consignincome_id", ["actorid"], { unique: true })
-@Entity("consignmentincome", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * consignmentincome
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Consignmentincome
+ */
+@Entity({
+    name: 'consignmentincome'
+})
 export class Consignmentincome {
-  @Column("int", {
-    name: "actorid",
-    nullable: true,
-    unique: true,
-    comment: "玩家id",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  actorid: number | null;
-
-  @Column("int", {
-    name: "income",
-    nullable: true,
-    comment: "寄卖收益",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  income: number | null;
-
-  @Column("int", {
-    name: "serverindex",
-    nullable: true,
-    comment: "服务器id",
-    default: () => "'0'",
-  })
-  serverindex: number | null;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Consignmentincome
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * 玩家id
+     *
+     * @type { number }
+     * @memberof Consignmentincome
+     */
+    @Column({ name: 'actorid' })
+    actorid: number;
+    /**
+     * 寄卖收益
+     *
+     * @type { number }
+     * @memberof Consignmentincome
+     */
+    @Column({ name: 'income' })
+    income: number;
+    /**
+     * 服务器id
+     *
+     * @type { number }
+     * @memberof Consignmentincome
+     */
+    @Column({ name: 'serverindex' })
+    serverindex: number;
 }

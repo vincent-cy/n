@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Select from '@paljs/ui/Select';
 import { Card, CardBody } from '@paljs/ui/Card';
 import Col from '@paljs/ui/Col';
@@ -5,10 +6,6 @@ import Row from '@paljs/ui/Row';
 import React from 'react';
 import styled from 'styled-components';
 import Layout from 'Layouts';
-
-export const SelectStyled = styled(Select)`
-  margin-bottom: 1rem;
-`;
 
 export default function SelectPage() {
   const positionOptions = [
@@ -36,7 +33,6 @@ export default function SelectPage() {
         <Col breakPoint={{ xs: 12 }}>
           <Card size="Small">
             <CardBody>
-              <SelectStyled options={statusOption} placeholder="Select" />
               <Select options={positionOptions} isMulti multiple placeholder="Select multiple" />
             </CardBody>
           </Card>

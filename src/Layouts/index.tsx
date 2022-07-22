@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React, { useState, useRef, useEffect, Fragment } from 'react';
 import { DefaultTheme, ThemeProvider } from 'styled-components';
 import themes from './themes';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Select from '@paljs/ui/Select';
 import { Radio } from '@paljs/ui/Radio';
 import { Card, CardBody } from '@paljs/ui/Card';

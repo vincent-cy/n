@@ -1,66 +1,85 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-
-@Entity("useramount", { schema: "mmo_account" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * useramount
+ * @Date 2022/7/22 15:16:22
+ * @author vincent
+ * @export
+ * @class Useramount
+ */
+@Entity({
+    name: 'useramount'
+})
 export class Useramount {
-  @PrimaryGeneratedColumn({ type: "int", name: "userid", unsigned: true })
-  userid: number;
-
-  @Column("int", {
-    name: "amount",
-    nullable: true,
-    comment: "用户余额，单位是元宝",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  amount: number | null;
-
-  @Column("int", {
-    name: "amountsum",
-    nullable: true,
-    comment: "用户总计充值元宝统计",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  amountsum: number | null;
-
-  @Column("int", {
-    name: "paysum",
-    nullable: true,
-    comment: "用户总计充值次数，每次充值都递增此值",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  paysum: number | null;
-
-  @Column("datetime", {
-    name: "firstpaytime",
-    nullable: true,
-    comment: "用户首次充值时间",
-  })
-  firstpaytime: Date | null;
-
-  @Column("int", {
-    name: "firstpayamount",
-    nullable: true,
-    comment: "用户首次充值元宝数量",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  firstpayamount: number | null;
-
-  @Column("datetime", {
-    name: "lastpaytime",
-    nullable: true,
-    comment: "用户最后一次充值时间",
-  })
-  lastpaytime: Date | null;
-
-  @Column("int", {
-    name: "lastpayamount",
-    nullable: true,
-    comment: "用户最后一次充值的元宝数量",
-    unsigned: true,
-    default: () => "'0'",
-  })
-  lastpayamount: number | null;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Useramount
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * userid
+     *
+     * @type { number }
+     * @memberof Useramount
+     */
+    @Column({ name: 'userid' })
+    userid: number;
+    /**
+     * 用户余额，单位是元宝
+     *
+     * @type { number }
+     * @memberof Useramount
+     */
+    @Column({ name: 'amount' })
+    amount: number;
+    /**
+     * 用户总计充值元宝统计
+     *
+     * @type { number }
+     * @memberof Useramount
+     */
+    @Column({ name: 'amountsum' })
+    amountsum: number;
+    /**
+     * 用户总计充值次数，每次充值都递增此值
+     *
+     * @type { number }
+     * @memberof Useramount
+     */
+    @Column({ name: 'paysum' })
+    paysum: number;
+    /**
+     * 用户首次充值时间
+     *
+     * @type { string }
+     * @memberof Useramount
+     */
+    @Column({ name: 'firstpaytime' })
+    firstpaytime: string;
+    /**
+     * 用户首次充值元宝数量
+     *
+     * @type { number }
+     * @memberof Useramount
+     */
+    @Column({ name: 'firstpayamount' })
+    firstpayamount: number;
+    /**
+     * 用户最后一次充值时间
+     *
+     * @type { string }
+     * @memberof Useramount
+     */
+    @Column({ name: 'lastpaytime' })
+    lastpaytime: string;
+    /**
+     * 用户最后一次充值的元宝数量
+     *
+     * @type { number }
+     * @memberof Useramount
+     */
+    @Column({ name: 'lastpayamount' })
+    lastpayamount: number;
 }

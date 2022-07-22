@@ -1,13 +1,45 @@
-import { Column, Entity } from "typeorm";
-
-@Entity("gameserveraddress", { schema: "actor_c1001" })
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+/**
+ * gameserveraddress
+ * @Date 2022/7/22 15:18:37
+ * @author vincent
+ * @export
+ * @class Gameserveraddress
+ */
+@Entity({
+    name: 'gameserveraddress'
+})
 export class Gameserveraddress {
-  @Column("int", { name: "serverindex", nullable: true })
-  serverindex: number | null;
-
-  @Column("char", { name: "serveraddress", nullable: true, length: 128 })
-  serveraddress: string | null;
-
-  @Column("int", { name: "serverport", nullable: true })
-  serverport: number | null;
+    /**
+     * 主键 id
+     *
+     * @type { number }
+     * @memberof Gameserveraddress
+     */
+    @PrimaryGeneratedColumn()
+    id: number;
+    /**
+     * serverindex
+     *
+     * @type { number }
+     * @memberof Gameserveraddress
+     */
+    @Column({ name: 'serverindex' })
+    serverindex: number;
+    /**
+     * serveraddress
+     *
+     * @type { string }
+     * @memberof Gameserveraddress
+     */
+    @Column({ name: 'serveraddress' })
+    serveraddress: string;
+    /**
+     * serverport
+     *
+     * @type { number }
+     * @memberof Gameserveraddress
+     */
+    @Column({ name: 'serverport' })
+    serverport: number;
 }
