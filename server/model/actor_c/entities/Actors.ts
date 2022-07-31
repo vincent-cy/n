@@ -10,21 +10,14 @@ import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
     name: 'actors'
 })
 export class Actors {
-    /**
-     * 主键 id
-     *
-     * @type { number }
-     * @memberof Actors
-     */
-    @PrimaryGeneratedColumn()
-    id: number;
+ 
     /**
      * 角色ID
      *
      * @type { number }
      * @memberof Actors
      */
-    @Column({ name: 'actorid' })
+    @PrimaryGeneratedColumn({ name: 'actorid' })
     actorid: number;
     /**
      * 账户ID

@@ -2,9 +2,11 @@ import 'reflect-metadata';
 
 import next from 'next';
 
+const mount = require('koa-mount');
+
 import bodyparser from 'koa-bodyparser';
 
-import Koa, { Context, Next } from 'koa';
+import Koa, { Context } from 'koa';
 
 import Router from '@koa/router';
 
@@ -13,65 +15,47 @@ import { config } from './config';
 import {
   createConnections,
   // getConnectionManager,
-  getTreeRepository,
 } from 'typeorm';
-import { Globaluser } from './model/mmo_account/entities/Globaluser';
+import api_router from './api';
+import { init_actor_service } from './services/actorServices';
+import { init_user_service } from './services/userServices';
+import { init_gm_service } from './services/gmServer';
 
-const app = next({ dev: config.isDev });
+// const app = next({ dev: config.isDev, conf: { assetPrefix: '/site' } });
 
 // const handle = app.getRequestHandler();
 
-app.prepare().then(async () => {
+// app.prepare().then(async () => {
+  //  await main()
+// });
+
+
+async function main (){
   await createConnections();
 
   const server = new Koa();
-  const router = new Router();
 
-  router.get('/api/hello', async (ctx: Context) => {
-    const url: string = ctx.url,
-      query: object = ctx.query,
-      queryString: string = ctx.querystring;
-    ctx.cookies.set('chen', 'hello');
-    // const account_db = getConnectionManager().get('account')
-    const blogRepository = getTreeRepository(Globaluser, 'account');
-    // console.log('account_db', account_db)
-    console.log('blogRepository', blogRepository);
-    let s = await blogRepository.find();
-    console.log('s', s);
-    ctx.body = {
-      url,
-      query,
-      queryString,
-      s,
-    };
-  });
+  init_actor_service()
+  init_user_service()
+  init_gm_service()
 
-  router.post('/api/login', async (ctx, next: Next) => {
-    const url: string = decodeURIComponent(ctx.url),
-      query: object = ctx.query,
-      queryString: string = ctx.querystring;
-    // @ts-ignore
-    let bodyData = ctx.request.body;
-    console.log('sssss', bodyData);
-    ctx.cookies.set('kssssey', 'sssss');
-    ctx.body = {
-      url,
-      query,
-      queryString,
-      bodyData,
-    };
-    next();
-  });
+  // const site_router = new Router();
 
-  // server.use(async (ctx: Context, next: Next) => {
-  // //   await handle(ctx.req, ctx.res);
-  // console.log('ctx',ctx);
-  //   await next();
+
+  // site_router.all('(.*)', async (ctx: Context) => {
+  //   await handle(ctx.req, ctx.res);
+  //   ctx.respond = false;
   // });
 
   server.use(bodyparser());
-  server.use(router.routes());
+
+  server
+    .use(mount('/api', api_router.middleware()))
+    // .use(mount('/site', site_router.middleware()));
+
   server.listen(config.port, () => {
     console.log(`> Ready on http://localhost:${config.port}`);
   });
-});
+}
+
+main()

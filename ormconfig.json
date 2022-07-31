@@ -1,7 +1,7 @@
 [{
   "name": "account",
   "type": "mysql",
-  "host": "localhost",
+  "host": "121.43.187.25",
   "port": 44406,
   "username": "root",
   "password": "EhM7xWXekSMHcmcT",
@@ -13,4 +13,34 @@
     "subscribersDir": "build/subscriber"
  },
   "entities": ["server/model/mmo_account/entities/*.ts"]
+},
+{
+  "name": "actor_1",
+  "type": "mysql",
+  "host": "121.43.187.25",
+  "port": 44406,
+  "username": "root",
+  "password": "EhM7xWXekSMHcmcT",
+  "database": "actor_c1001",
+  "author": "vincent",
+  "cli": {
+    "entitiesDir": "server/model/actor_c/entities/*.ts",
+    "migrationsDir": "build/migration",
+    "subscribersDir": "build/subscriber"
+ },
+  "entities": ["server/model/actor_c/entities/*.ts"]
+},
+{
+  "name": "bx_web",
+  "type": "mysql",
+  "host": "121.43.187.25",
+  "port": 44406,
+  "username": "root",
+  "password": "EhM7xWXekSMHcmcT",
+  "database": "bx_web",
+  "author": "vincent",
+  "cli": {
+    "entitiesDir": "server/model/bx_web/entities/*.ts"
+ },
+  "entities": ["server/model/bx_web/entities/*.ts"]
 }]

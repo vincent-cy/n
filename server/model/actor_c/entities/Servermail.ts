@@ -11,20 +11,12 @@ import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 })
 export class Servermail {
     /**
-     * 主键 id
-     *
-     * @type { number }
-     * @memberof Servermail
-     */
-    @PrimaryGeneratedColumn()
-    id: number;
-    /**
      * 全服邮件id
      *
      * @type { number }
      * @memberof Servermail
      */
-    @Column({ name: 'servermailid' })
+    @PrimaryGeneratedColumn({ name: 'servermailid' })
     servermailid: number;
     /**
      * 角色id
