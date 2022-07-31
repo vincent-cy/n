@@ -18,7 +18,7 @@ export class ActorService {
     }
 
     allActors = async () => {
-        return await this.actorRepository.findAndCount({ select: ['accountid','accountname','circle','mountexp','level','logindays'] })
+        return await this.actorRepository.findAndCount({ select: ['accountid','accountname','circle','mountexp','level','logindays', 'actorname','actorid','energy'] })
     }
 
     findUserActor = async ({ accountid }) => {

@@ -41,10 +41,10 @@ export const Group = styled.div`
 const CardAuth = styled(Card)`
   margin-bottom: 0;
   height: calc(100vh - 5rem);
-  /* background-image: url("/image/1.jpg");
+  background-image: url("/site/image/1.jpg");
   background-position:center center;
   background-repeat:no-repeat;
-	background-attachment:fixed; */
+	background-attachment:fixed;
   ${breakpointDown('sm')`
     height: 100vh;
   `}

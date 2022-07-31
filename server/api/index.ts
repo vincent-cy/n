@@ -112,6 +112,18 @@ api_router.get('/all-actors', async (ctx:Context)=>{
   }
 })
 
-
+api_router.get('/actor/:actorid', async (ctx:Context)=>{
+  try {
+    const {actorid} = ctx.params
+    const data = await actor_service.findActor({actorid})
+    ctx.body = {
+      data
+    }
+  } catch (error) {
+    ctx.body = {
+      data:[]
+    }
+  }
+})
 
 export default api_router
