@@ -55,7 +55,7 @@ const LayoutPage: React.FC<SEOProps> = ({ children, ...rest }) => {
     setDir(newDir);
   };
 
-  const authLayout = router.pathname.startsWith('/auth');
+  const authLayout = router.pathname.startsWith('/auth') || router.pathname.startsWith('/login');
 
   return (
     <Fragment>
@@ -73,7 +73,7 @@ const LayoutPage: React.FC<SEOProps> = ({ children, ...rest }) => {
               />
             )}
             <LayoutContainer>
-              {!authLayout && (
+              {/* {!authLayout && (
                 <Sidebar
                   getState={getState}
                   ref={sidebarRef}
@@ -94,7 +94,7 @@ const LayoutPage: React.FC<SEOProps> = ({ children, ...rest }) => {
                     />
                   </SidebarBody>
                 </Sidebar>
-              )}
+              )} */}
               <LayoutContent>
                 <LayoutColumns>
                   <LayoutColumn className="main-content">{children}</LayoutColumn>

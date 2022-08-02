@@ -45,5 +45,4 @@ const TabPage = () => {
   );
 };
 
-
 export default TabPage;

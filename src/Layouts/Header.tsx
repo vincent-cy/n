@@ -109,15 +109,9 @@ const Header: React.FC<HeaderProps> = (props) => {
           size="Medium"
           actions={[
             {
-              icon: { name: 'menu-2-outline' },
-              url: {
-                onClick: props.toggleSidebar,
-              },
-            },
-            {
               content: (
                 <Link href="/">
-                  <a className="logo">Admin Template</a>
+                  <a className="logo">冰雪</a>
                 </Link>
               ),
             },

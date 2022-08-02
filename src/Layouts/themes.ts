@@ -15,6 +15,6 @@ export default function themeService(theme: DefaultTheme['name'], dir: 'ltr' | '
     case 'cosmic':
     case 'corporate':
     default:
-      return createTheme(theme, { dir, ...shared });
+      return createTheme('dark', { dir, ...shared });
   }
 }
