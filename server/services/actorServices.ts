@@ -18,7 +18,7 @@ export class ActorService {
     }
 
     allActors = async () => {
-        return await this.actorRepository.findAndCount({ select: ['accountid','accountname','circle','mountexp','level','logindays', 'actorname','actorid','energy'] })
+        return await this.actorRepository.find({ select: ['accountid','accountname','circle','mountexp','level','logindays', 'actorname','actorid','energy', 'onlinestatus', 'totalonlinesecond', 'serverindex', 'job','checkins','killmonstercount'] })
     }
 
     findUserActor = async ({ accountid }) => {
@@ -28,6 +28,7 @@ export class ActorService {
     updateActorInfo = async ({ actorid }: { actorid: number }) => {
         return await this.actorRepository.update(actorid, {})
     }
+
 }
 
 export function init_actor_service() {
